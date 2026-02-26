@@ -1,11 +1,11 @@
 import Logo from '@/assets/images/furniro-logo.png';
 import Image from 'next/image';
 import { Spacer } from '../common';
-import { Nav, Actions } from '.';
+import { Nav, Actions, HeaderWrapper } from '.';
 
 const Header = () => {
   return (
-    <header className='flex flex-row items-center *:flex *:flex-row *:items-center h-25 px-20 py-10'>
+    <HeaderWrapper>
       <div className='gap-1'>
         <div>
           <Image src={Logo} alt='Furniro Logo' />
@@ -13,10 +13,10 @@ const Header = () => {
         <h3 className='font-montserrat text-[34px]'>Furniro</h3>
       </div>
       <Spacer flex={2} />
-      <Nav className='flex-2'/>
-      <Spacer flex={2}/>
-      <Actions className='flex-1'/>
-    </header>
+      <Nav className='flex-2' />
+      <Spacer flex={2} />
+      <Actions className='flex-1' />
+    </HeaderWrapper>
   );
 }
 
