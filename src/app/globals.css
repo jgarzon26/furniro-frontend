@@ -14,6 +14,26 @@
   body {
     font-family: "Poppins", sans-serif;
   }
+
+  h2, h3, h4 {
+    @apply text-(--foreground) font-bold
+  }
+
+  h1 {
+    @apply text-[52px] text-(--primary) font-bold
+  }
+
+  h2 {
+    @apply text-[40px]
+  }
+
+  h3 {
+    @apply text-[32px]
+  }
+
+  h4 {
+    @apply text-[24px]
+  }
 }
 
 @theme {
