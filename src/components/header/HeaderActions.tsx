@@ -9,7 +9,7 @@ type Props = {
 const HeaderActions: FC<Props> = ({className}) => {
 
   return (
-    <ul className={`justify-between ${className ?? ''}`}>
+    <ul className={`*:px-5 ${className ?? ''}`}>
       <li>
         <IconButton icon={Account}/>
       </li>
