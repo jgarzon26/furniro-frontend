@@ -9,6 +9,8 @@
     --primary-foreground: #ffffff;
     --secondary: #FFF3E3;
     --secondary-foreground: #333333;
+
+    --footer-highlight: #9F9F9F;
   }
 
   body {
@@ -44,7 +46,8 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
+  --color-footer-highlight: var(--footer-highlight);
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  
 }
