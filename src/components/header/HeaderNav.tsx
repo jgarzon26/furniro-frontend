@@ -1,4 +1,5 @@
 import { FC } from "react";
+import navs from "@/common/navs";
 
 type Props = {
   className?: string;
@@ -7,10 +8,9 @@ type Props = {
 const HeaderNav: FC<Props> = ({className}) => {
   return (
     <nav className={`list-none *:px-10 ${className}`}>
-      <li>Home</li>
-      <li>Shop</li>
-      <li>About</li>
-      <li>Contact</li>
+      {
+        navs.map((nav, index) => (<li key={index}>{nav.title}</li>))
+      }
     </nav>
   );
 };
