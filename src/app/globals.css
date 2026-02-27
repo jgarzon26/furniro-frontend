@@ -54,6 +54,11 @@
   --color-footer-highlight: var(--footer-highlight);
   --color-paragraph-desc: var(--paragraph-desc);
 
+  --color-button-primary: var(--primary);
+  --color-button-primary-foreground: var(--primary-foreground);
+  --color-button-secondary: var(--primary-foreground);
+  --color-button-secondary-foreground: var(--primary);
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }

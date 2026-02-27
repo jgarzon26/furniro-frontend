@@ -11,7 +11,7 @@ const TextButton: FC<Props & PropsWithChildren> = ({ className, onClick, childre
     <button 
       type="button" 
       onClick={onClick} 
-      className={twMerge('bg-primary text-primary-foreground flex items-center justify-center px-15 py-5', className)}
+      className={twMerge('bg-button-primary text-button-primary-foreground flex items-center justify-center px-15 py-5', className)}
     >
       {children}
     </button>
