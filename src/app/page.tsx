@@ -1,4 +1,4 @@
-import { CategorySection, IntroSection, ProductSection } from "@/components/home";
+import { CategorySection, IntroSection, ProductSection, DisplaySection } from "@/components/home";
 
 const HomePage = () => {
   return (
@@ -6,6 +6,7 @@ const HomePage = () => {
       <IntroSection />
       <CategorySection />
       <ProductSection />
+      <DisplaySection />
     </main>
   );
 }
