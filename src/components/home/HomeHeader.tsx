@@ -1,8 +1,13 @@
 import { FC, PropsWithChildren } from "react";
+import { twMerge } from "tailwind-merge";
 
-const HomeHeader: FC<PropsWithChildren> & { Subtitle: FC<PropsWithChildren>} = ({ children }) => {
+type Props = {
+  className?: string;
+}
+
+const HomeHeader: FC<Props & PropsWithChildren> & { Subtitle: FC<PropsWithChildren>} = ({ className, children }) => {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className={twMerge("flex flex-col items-center text-center mb-15", className)}>
       {children}
     </div>
   );
