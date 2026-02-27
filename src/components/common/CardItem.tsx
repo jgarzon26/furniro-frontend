@@ -48,7 +48,7 @@ const CardItem = () => {
                 <li key={index}>
                   <TextButton className="p-0 bg-transparent flex flex-row gap-1">
                     <Image src={icon} alt={title}/>
-                    <p className="font-semibold">{title}</p>
+                    <TextButton.Text className="font-semibold">{title}</TextButton.Text>
                   </TextButton>
                 </li>
               ))

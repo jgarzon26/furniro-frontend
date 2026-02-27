@@ -6,7 +6,11 @@ type Props = {
   onClick?: () => void;
 }
 
-const TextButton: FC<Props & PropsWithChildren> = ({ className, onClick, children }) => {
+type TextProps = {
+  className?: string;
+}
+
+const TextButton: FC<Props & PropsWithChildren> & {Text: FC<TextProps & PropsWithChildren>} = ({ className, onClick, children }) => {
   return (
     <button 
       type="button" 
@@ -17,5 +21,11 @@ const TextButton: FC<Props & PropsWithChildren> = ({ className, onClick, childre
     </button>
   );
 }
+
+const Text: FC<TextProps & PropsWithChildren> = ({ children, className }) => {
+  return <p className={twMerge("font-bold", className)}>{children}</p>;
+}
+
+TextButton.Text = Text;
 
 export default TextButton;

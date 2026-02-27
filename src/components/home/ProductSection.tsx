@@ -20,7 +20,7 @@ const ProductSection = () => {
       </ul>
       <SizedBox height={40}/>
       <TextButton className="px-20 py-3 bg-button-secondary text-button-secondary-foreground border border-button-secondary-foreground">
-        <p>Show More</p>
+        <TextButton.Text>Show More</TextButton.Text>
       </TextButton>
     </SectionWrapper>
   );
