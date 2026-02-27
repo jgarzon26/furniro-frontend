@@ -1,4 +1,4 @@
-import Logo from '@/assets/images/furniro-logo.png';
+import { Logo } from '@/assets/icons';
 import Image from 'next/image';
 import { Spacer } from '../common';
 import { Nav, Actions, HeaderWrapper } from '.';
