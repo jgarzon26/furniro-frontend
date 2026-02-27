@@ -11,6 +11,7 @@
     --secondary-foreground: #333333;
 
     --footer-highlight: #9F9F9F;
+    --paragraph-desc: #666666;
   }
 
   body {
@@ -51,6 +52,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
 
   --color-footer-highlight: var(--footer-highlight);
+  --color-paragraph-desc: var(--paragraph-desc);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;

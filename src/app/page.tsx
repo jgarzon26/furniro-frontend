@@ -1,9 +1,10 @@
-import { IntroSection } from "@/components/home";
+import { CategorySection, IntroSection } from "@/components/home";
 
 const HomePage = () => {
   return (
     <main>
       <IntroSection />
+      <CategorySection />
     </main>
   );
 }
