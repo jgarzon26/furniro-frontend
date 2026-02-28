@@ -5,7 +5,11 @@ type Props = {
   className?: string;
 }
 
-const HomeHeader: FC<Props & PropsWithChildren> & { Subtitle: FC<PropsWithChildren>} = ({ className, children }) => {
+type SubtitleProps = {
+  className?: string;
+}
+
+const HomeHeader: FC<Props & PropsWithChildren> & { Subtitle: FC<SubtitleProps & PropsWithChildren>} = ({ className, children }) => {
   return (
     <div className={twMerge("flex flex-col items-center text-center mb-15", className)}>
       {children}
@@ -13,8 +17,8 @@ const HomeHeader: FC<Props & PropsWithChildren> & { Subtitle: FC<PropsWithChildr
   );
 }
 
-const HomeHeaderSubtitle: FC<PropsWithChildren> = ({ children }) => {
-  return <p className="text-paragraph-desc w-2/3">{children}</p>
+const HomeHeaderSubtitle: FC<SubtitleProps & PropsWithChildren> = ({ className, children }) => {
+  return <p className={twMerge("text-paragraph-desc w-2/3", className)}>{children}</p>
 }
 
 HomeHeader.Subtitle = HomeHeaderSubtitle;
