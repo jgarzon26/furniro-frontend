@@ -1,4 +1,5 @@
 import { Placeholder, SizedBox, Spacer, TextButton } from "../common";
+import { BsArrowRight } from "react-icons/bs";
 
 const DisplaySection = () => {
   //TODO: Make this background color rely on theme
@@ -14,22 +15,33 @@ const DisplaySection = () => {
           <TextButton.Text>Explore More</TextButton.Text>
         </TextButton>
       </article>
-      <SizedBox width={50}/>
+      <SizedBox width={50} />
       <article className="flex-3 overflow-x-hidden">
         <ul className="h-120 w-full flex flex-row gap-5">
           <li className="relative h-full aspect-2/3">
-            <Placeholder className="absolute"/>
-            <div className="absolute left-5 bottom-5 w-1/2 h-1/5 bg-primary-foreground flex flex-col px-5 justify-center">
-              <p className="text-paragraph-desc">01 --- Category</p>
-              <h4 className="text-[28px]">Title</h4>
+            <Placeholder className="absolute" />
+            <div className="absolute left-5 bottom-5 w-3/4 h-1/5 flex flex-row">
+              <div className="h-full w-full bg-primary-foreground flex flex-col px-5 justify-center">
+                <span className="flex flex-row items-center gap-3 text-paragraph-desc">
+                  <p>01</p>
+                  <hr className="w-1/8" />
+                  <p>Category</p>
+                </span>
+                <h4 className="text-[28px]">Title</h4>
+              </div>
+              <div className="bg-primary w-1/4 h-1/2 self-end">
+                <div className="flex items-center justify-center h-full w-full">
+                  <BsArrowRight className="text-primary-foreground" size={20}/>
+                </div>
+              </div>
             </div>
           </li>
           <li className="h-10/12 aspect-3/2">
-            <Placeholder/>
+            <Placeholder />
             {/* TODO: Add an indicator */}
           </li>
           <li className="h-10/12 aspect-3/2">
-            <Placeholder/>
+            <Placeholder />
           </li>
         </ul>
       </article>
