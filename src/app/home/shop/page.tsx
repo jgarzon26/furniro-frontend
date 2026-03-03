@@ -1,6 +1,10 @@
+import { ShopIntro } from "@/components/shop";
+
 const ShopPage = () => {
   return (
-    <main></main>
+    <main>
+      <ShopIntro />
+    </main>
   );
 }
 
