@@ -1,0 +1,7 @@
+const ShopPage = () => {
+  return (
+    <main></main>
+  );
+}
+
+export default ShopPage;
