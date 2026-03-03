@@ -1,9 +1,10 @@
-import { ShopIntro } from "@/components/shop";
+import { OptionsTab, ShopIntro } from "@/components/shop";
 
 const ShopPage = () => {
   return (
     <main>
       <ShopIntro />
+      <OptionsTab />
     </main>
   );
 }

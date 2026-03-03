@@ -21,6 +21,8 @@
     --card-hover-background: #3A3A3A;
 
     --display-radio-off: #D8D8D8;
+
+    --shop-option: #FFEAD0;
   }
 
   body {
@@ -77,6 +79,8 @@
 
   --color-display-carousel-radio-off: var(--display-radio-off);
   --color-display-carousel-radio: var(--primary);
+
+  --color-shop-option: var(--shop-option);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
