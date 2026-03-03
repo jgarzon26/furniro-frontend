@@ -23,6 +23,8 @@
     --display-radio-off: #D8D8D8;
 
     --shop-option: #FFEAD0;
+
+    --page-button: #F9F1E7;
   }
 
   body {
@@ -81,6 +83,9 @@
   --color-display-carousel-radio: var(--primary);
 
   --color-shop-option: var(--shop-option);
+
+  --color-page-button: var(--page-button);
+  --color-page-button-active: var(--primary);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;

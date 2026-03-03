@@ -1,11 +1,12 @@
-import { OptionsTabSection, ShopGridSection, ShopIntroSection } from "@/components/shop";
+import { OptionsTabSection, PaginationSection, ShopGridSection, ShopIntroSection } from "@/components/shop";
 
 const ShopPage = () => {
   return (
-    <main>
+    <main className="flex flex-col">
       <ShopIntroSection />
       <OptionsTabSection />
       <ShopGridSection />
+      <PaginationSection />
     </main>
   );
 }
