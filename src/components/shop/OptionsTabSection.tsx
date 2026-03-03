@@ -2,7 +2,7 @@ import { IconButton } from "../common";
 import { Filter, Grid, ViewList } from "../common/icons";
 import OptionTextField from "./OptionTextField";
 
-const OptionsTab = () => {
+const OptionsTabSection = () => {
   return (
     <section className="h-25 w-full flex flex-row items-center justify-between bg-shop-option px-20">
       <div className="flex flex-row items-center gap-5">
@@ -17,14 +17,14 @@ const OptionsTab = () => {
         <p className="border-l border-l-footer-highlight px-5">Showing 1-16 of 32 results</p>
       </div>
       <div className="flex flex-row items-center gap-3">
-        <OptionTextField 
+        <OptionTextField
           type="number"
-          id="show" 
-          label="show" 
-          placeholder="16" 
+          id="show"
+          label="show"
+          placeholder="16"
           inputClassName="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none "
         />
-        <OptionTextField 
+        <OptionTextField
           id="short"
           label="short"
           placeholder="Default"
@@ -35,4 +35,4 @@ const OptionsTab = () => {
   );
 }
 
-export default OptionsTab;
+export default OptionsTabSection;

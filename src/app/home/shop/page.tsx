@@ -1,10 +1,10 @@
-import { OptionsTab, ShopIntro } from "@/components/shop";
+import { OptionsTabSection, ShopIntroSection } from "@/components/shop";
 
 const ShopPage = () => {
   return (
     <main>
-      <ShopIntro />
-      <OptionsTab />
+      <ShopIntroSection />
+      <OptionsTabSection />
     </main>
   );
 }

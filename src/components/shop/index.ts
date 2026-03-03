@@ -1,2 +1,2 @@
-export { default as ShopIntro } from './ShopIntro';
-export { default as OptionsTab } from './OptionsTab';
+export { default as ShopIntroSection } from "./ShopIntroSection";
+export { default as OptionsTabSection } from "./OptionsTabSection";

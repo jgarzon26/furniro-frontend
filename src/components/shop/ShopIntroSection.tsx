@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Intro from '@/assets/images/shop-intro.png';
 import { ArrowRight } from '../common/icons';
 
-const ShopIntro = () => {
+const ShopIntroSection = () => {
   return (
     <section className='h-100 relative'>
-      <Image src={Intro} alt='Intro' className='absolute h-full object-cover'/>
-      <div className='absolute h-full w-full z-10 bg-white/50 backdrop-blur-xs'/>
+      <Image src={Intro} alt='Intro' className='absolute h-full object-cover' />
+      <div className='absolute h-full w-full z-10 bg-white/50 backdrop-blur-xs' />
       <div className='absolute z-20 top-1/2 left-1/2 -translate-1/2 flex flex-col items-center justify-center'>
         <h2 className='text-[48px]'>Shop</h2>
         <div className='flex flex-row items-center gap-2'>
@@ -21,4 +21,4 @@ const ShopIntro = () => {
   );
 }
 
-export default ShopIntro;
+export default ShopIntroSection;
