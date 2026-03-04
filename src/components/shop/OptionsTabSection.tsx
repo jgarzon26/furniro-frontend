@@ -1,6 +1,7 @@
 import { IconButton } from "../common";
 import { Filter, Grid, ViewList } from "../common/icons";
-import OptionTextField from "./OptionTextField";
+import OptionInputs from "./OptionInputs";
+import ResultText from "./ResultText";
 
 const OptionsTabSection = () => {
   return (
@@ -14,23 +15,9 @@ const OptionsTabSection = () => {
         </button>
         <IconButton icon={Grid} size={20} />
         <IconButton icon={ViewList} size={20} />
-        <p className="border-l border-l-footer-highlight px-5">Showing 1-16 of 32 results</p>
+        <ResultText />
       </div>
-      <div className="flex flex-row items-center gap-3">
-        <OptionTextField
-          type="number"
-          id="show"
-          label="show"
-          placeholder="16"
-          inputClassName="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none "
-        />
-        <OptionTextField
-          id="short"
-          label="short"
-          placeholder="Default"
-          inputClassName="w-[180px] text-start px-5"
-        />
-      </div>
+      <OptionInputs />
     </section>
   );
 }

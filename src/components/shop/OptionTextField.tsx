@@ -1,4 +1,4 @@
-import { FC, HTMLInputTypeAttribute } from "react";
+import { ChangeEventHandler, FC, HTMLInputTypeAttribute } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
@@ -7,9 +7,11 @@ type Props = {
   placeholder?: string;
   inputClassName?: string;
   type?: HTMLInputTypeAttribute;
+  onChange?: ChangeEventHandler<HTMLInputElement, HTMLInputElement>;
+  value?: string | number;
 }
 
-const OptionTextField: FC<Props> = ({ id, label, type, placeholder, inputClassName }) => {
+const OptionTextField: FC<Props> = ({ id, label, type, placeholder, inputClassName, value, onChange }) => {
   return (
     <div className="flex flex-row items-center gap-3">
       <label htmlFor={id} className="capitalize">{label}</label>
@@ -18,7 +20,10 @@ const OptionTextField: FC<Props> = ({ id, label, type, placeholder, inputClassNa
         type={type ?? 'text'}
         name={id}
         id={id}
-        placeholder={placeholder} />
+        placeholder={placeholder} 
+        onChange={onChange}
+        value={value}
+      />
     </div>
   );
 };
