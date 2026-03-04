@@ -9,10 +9,19 @@ import { initShopOptionsState } from "@/stores/shop-options-store";
 const OptionInputs = () => {
   const { setShow, setShort } = useShopOptionsStore((state) => state);
   const { show } = initShopOptionsState;
+  const debounceShow = useDebounce();
+  const debounceShort = useDebounce();
 
   const onChangeShow = (event: ChangeEvent<HTMLInputElement>) => {
+    debounceShow(() => {
+      const parse = parseInt(event.target.value);
+      const value = isNaN(parse) ? 0 : parse;
+      setShow(value);
+    });
   };
+
   const onChangeShort = (event: ChangeEvent<HTMLInputElement>) => {
+    debounceShort(() => setShort(event.target.value));
   };
 
   return (
