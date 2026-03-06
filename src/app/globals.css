@@ -13,6 +13,7 @@
     --secondary-foreground: #333333;
 
     --footer-highlight: #9F9F9F;
+    --footer-benefit: #FAF3EA;
 
     --paragraph-desc: #666666;
 
@@ -67,6 +68,8 @@
   --color-secondary-foreground: var(--secondary-foreground);
 
   --color-footer-highlight: var(--footer-highlight);
+  --color-footer-benefit: var(--footer-benefit);
+  --color-footer-benefit-sub: var(--card-desc);
 
   --color-paragraph-desc: var(--paragraph-desc);
 

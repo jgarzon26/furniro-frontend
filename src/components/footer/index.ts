@@ -1,3 +1,4 @@
+export { default as BenefitListTile } from './BenefitListTile';
 export { default as CompanyDetail } from './CompanyDetail';
 export { default as HelpList } from './HelpList';
 export { default as Links } from './Links';
