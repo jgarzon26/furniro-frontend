@@ -3,7 +3,7 @@ import { Delete } from "@/components/common/icons";
 
 const CartPage = () => {
   return (
-    <main className="flex flex-row justify-between gap-10 min-h-75 p-10">
+    <main className="flex flex-row justify-between gap-10 min-h-100 p-10">
       <table className="table-fixed h-full w-full [&_td]:p-2">
         <colgroup>
           <col className="w-1/8"/>
@@ -38,8 +38,8 @@ const CartPage = () => {
           </tr>
         </tbody>
       </table>
-      <section className="flex flex-col justify-between bg-cart w-1/4 px-20 *:flex-1">
-        <h3 className="text-center">Cart Totals</h3>
+      <section className="flex flex-col bg-cart w-1/4 px-20 *:flex-1">
+        <h3 className="text-center mt-5">Cart Totals</h3>
         <Spacer />
         <article>
           <div className="flex flex-row items-center justify-between">
@@ -54,8 +54,8 @@ const CartPage = () => {
           </div>
         </article>
         <Spacer />
-        <button type="button" className="border rounded-2xl w-1/2 h-15 self-center">
-          Check Out
+        <button type="button" className="flex items-center justify-center border rounded-2xl w-10/12 h-15 self-center py-3">
+          <p className="text-[20px]">Check Out</p>
         </button>
         <Spacer />
       </section>
