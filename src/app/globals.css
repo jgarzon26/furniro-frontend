@@ -90,6 +90,9 @@
   --color-page-button: var(--page-button);
   --color-page-button-active: var(--primary);
 
+  --color-cart: var(--page-button);
+
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
