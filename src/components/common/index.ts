@@ -5,3 +5,4 @@ export { default as TextButton } from './TextButton';
 export { default as Placeholder } from './Placeholder';
 export { default as CardItem } from './CardItem';
 export { default as Badge } from './Badge';export { default as IntroSection } from "./IntroSection";
+export { default as IntroSection } from "./IntroSection";
