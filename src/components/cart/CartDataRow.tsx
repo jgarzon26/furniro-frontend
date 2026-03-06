@@ -12,7 +12,7 @@ const CartDataRow = () => {
       <td>Product Name</td>
       <td className="text-footer-highlight">Rs. 250,000.00</td>
       <td className="flex justify-center items-center h-full">
-        <p className="flex items-center justify-center border w-1/3">1</p>
+        <p className="flex items-center justify-center border border-cart-border rounded-[5px] w-1/3 p-2">1</p>
       </td>
       <td>Rs. 250,000.00</td>
       <td>

@@ -91,7 +91,7 @@
   --color-page-button-active: var(--primary);
 
   --color-cart: var(--page-button);
-
+  --color-cart-border: var(--footer-highlight);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
