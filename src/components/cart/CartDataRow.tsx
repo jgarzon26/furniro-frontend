@@ -4,11 +4,15 @@ import { Delete } from "@/components/common/icons";
 const CartDataRow = () => {
   return (
     <tr>
-      <td><Placeholder /></td>
+      <td className="h-40 p-8">
+        <div className="h-full bg-primary/22 rounded-lg">
+          <Placeholder />
+        </div>
+      </td>
       <td>Product Name</td>
       <td className="text-footer-highlight">Rs. 250,000.00</td>
-      <td className="flex items-center justify-center border w-1/3">
-        1
+      <td className="flex justify-center items-center h-full">
+        <p className="flex items-center justify-center border w-1/3">1</p>
       </td>
       <td>Rs. 250,000.00</td>
       <td>
