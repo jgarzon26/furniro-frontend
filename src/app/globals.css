@@ -92,6 +92,8 @@
 
   --color-cart: var(--page-button);
   --color-cart-border: var(--footer-highlight);
+  --color-cart-modal-divider: var(--footer-highlight);
+  --color-cart-off: var(--footer-highlight);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;

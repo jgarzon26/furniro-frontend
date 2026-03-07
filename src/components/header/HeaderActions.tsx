@@ -1,26 +1,27 @@
 import { FC } from 'react';
 import { IconButton } from '../common';
-import { Account, Heart, Search, ShoppingCart } from '../common/icons';
+import { Account, Heart, Search } from '../common/icons';
+import ModalButton from './cart-modal/ModalButton';
 
 type Props = {
   className?: string;
 };
 
-const HeaderActions: FC<Props> = ({className}) => {
+const HeaderActions: FC<Props> = ({ className }) => {
 
   return (
     <ul className={`*:px-5 ${className ?? ''}`}>
       <li>
-        <IconButton icon={Account}/>
+        <IconButton icon={Account} />
       </li>
       <li>
-        <IconButton icon={Search}/>
+        <IconButton icon={Search} />
       </li>
       <li>
-        <IconButton icon={Heart}/>
+        <IconButton icon={Heart} />
       </li>
       <li>
-        <IconButton icon={ShoppingCart}/>
+        <ModalButton />
       </li>
     </ul>
   );
