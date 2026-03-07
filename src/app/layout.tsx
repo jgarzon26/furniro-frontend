@@ -12,6 +12,7 @@ const RootLayout: FC<LayoutProps<'/'>> = ({children}) => {
   return (
     <html lang='en'>
       <body>
+        <div id='modal'/>
         <Header />
         {children}
       </body>
