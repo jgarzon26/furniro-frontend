@@ -1,4 +1,4 @@
-import { EventHandler, FC, MouseEventHandler, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { createPortal } from "react-dom";
 import { twMerge } from "tailwind-merge";
 
