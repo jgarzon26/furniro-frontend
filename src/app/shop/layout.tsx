@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import ShopOptionsProvider from "@/providers/ShopOptionsProvider";
 import { SWRConfig } from "swr";
 import { fetchData } from "@/lib/api";
-import { IntroSection } from "@/components/common";
 
 export const metadata: Metadata = {
   title: 'Shop',
@@ -16,7 +15,6 @@ const ShopLayout: FC<LayoutProps<'/shop'>> = ({ children }) => {
   return (
     <SWRConfig value={{fallback: {'/api/shop': tempdata}}}>
       <ShopOptionsProvider>
-        <IntroSection />
         {children}
       </ShopOptionsProvider>
     </SWRConfig>
