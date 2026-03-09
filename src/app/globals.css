@@ -26,6 +26,8 @@
     --shop-option: #FFEAD0;
 
     --page-button: #F9F1E7;
+
+    --highlight: #9F9F9F;
   }
 
   body {
@@ -94,6 +96,10 @@
   --color-cart-border: var(--footer-highlight);
   --color-cart-modal-divider: var(--footer-highlight);
   --color-cart-off: var(--footer-highlight);
+
+  --color-shop-detail-nav: var(--page-button);
+  --color-shop-detail-nav-title: var(--highlight);
+  --color-shop-detail-divider: var(--highlight);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
