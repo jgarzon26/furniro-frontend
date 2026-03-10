@@ -33,6 +33,7 @@ const ProductDetailSection: FC<Props> = ({slug}) => {
         <SizeSelection />
         <ColorSelection />
         <ShopActions />
+        <ProductMetaDetails />
       </section>
     </section>
   );
