@@ -11,6 +11,10 @@ const ProductDetailSection: FC = () => {
         <ProductGallerySelected />
       </ProductGallery>
       <section className="flex-1 "></section>
+        <article>
+          <h2 className="font-normal text-[42px]">Product Title</h2>
+          <h4 className="font-medium text-shop-detail-highlight">Rs. 250,000.00</h4>
+        </article>
     </section>
   );
 }
