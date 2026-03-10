@@ -4,6 +4,7 @@ export { default as IconButton } from "./IconButton";
 export { default as IntroSection } from "./IntroSection";
 export { default as Modal } from './Modal';
 export { default as Placeholder } from "./Placeholder";
+export { default as Rating } from './Rating';
 export { default as Spacer } from "./Spacer";
 export { default as SizedBox } from "./SizedBox";
 export { default as TextButton } from "./TextButton";
