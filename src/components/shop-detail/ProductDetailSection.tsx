@@ -5,8 +5,11 @@ import SizeSelection from "./SizeSelection";
 import ColorSelection from "./ColorSelection";
 import ShopActions from "./ShopActions";
 
+type Props = {
+  slug: string;
+}
 
-const ProductDetailSection: FC = () => {
+const ProductDetailSection: FC<Props> = ({slug}) => {
   const testids = ['1','2','3','4','5'];
 
   return (
@@ -15,7 +18,7 @@ const ProductDetailSection: FC = () => {
         <ProductGalleryList />
         <ProductGallerySelected />
       </ProductGallery>
-      <section className="flex flex-col flex-2 gap-5">
+      <section className="flex flex-col flex-1 gap-5">
         <article>
           <h2 className="font-normal text-[42px]">Product Title</h2>
           <h4 className="font-medium text-shop-detail-highlight">Rs. 250,000.00</h4>
@@ -24,7 +27,7 @@ const ProductDetailSection: FC = () => {
           <Rating count={4.5}/>
           <p className="text-shop-detail-highlight text-[13px] border-l border-l-shop-detail-divider px-5">5 Customer Review</p>
         </article>
-        <article>
+        <article className="w-2/3">
           <p>Short description</p>
         </article>
         <SizeSelection />

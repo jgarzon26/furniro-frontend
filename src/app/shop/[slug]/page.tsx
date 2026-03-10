@@ -7,7 +7,7 @@ const ShopDetailPage: FC<PageProps<'/shop/[slug]'>> = async ({ params }) => {
 
   return (
     <main className="px-10 py-5">
-      <ProductDetailSection />
+      <ProductDetailSection slug={slug}/>
     </main>
   );
 }
