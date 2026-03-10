@@ -19,6 +19,9 @@ const ProductDetailSection: FC = () => {
           <Rating count={4.5}/>
           <p className="text-shop-detail-highlight text-[13px] border-l border-l-shop-detail-divider px-5">5 Customer Review</p>
         </article>
+        <article>
+          <p>Short description</p>
+        </article>
       </section>
     </section>
   );
