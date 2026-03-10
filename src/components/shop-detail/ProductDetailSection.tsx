@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { ProductGallery, ProductGalleryList, ProductGallerySelected } from "./ProductGallery";
 import { Rating } from "@/components/common";
+import SizeSelection from "./SizeSelection";
+
 
 const ProductDetailSection: FC = () => {
   const testids = ['1','2','3','4','5'];
@@ -23,6 +25,7 @@ const ProductDetailSection: FC = () => {
         <article>
           <p>Short description</p>
         </article>
+        <SizeSelection />
       </section>
     </section>
   );
