@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { ProductGallery, ProductGalleryList, ProductGallerySelected } from "./ProductGallery";
-import { CounterInput, Rating } from "@/components/common";
+import { Rating } from "@/components/common";
 import SizeSelection from "./SizeSelection";
 import ColorSelection from "./ColorSelection";
+import ShopActions from "./ShopActions";
 
 
 const ProductDetailSection: FC = () => {
@@ -28,9 +29,7 @@ const ProductDetailSection: FC = () => {
         </article>
         <SizeSelection />
         <ColorSelection />
-        <article>
-          <CounterInput name="quantity"/>
-        </article>
+        <ShopActions />
       </section>
     </section>
   );
