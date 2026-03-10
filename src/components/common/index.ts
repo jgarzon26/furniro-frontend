@@ -1,5 +1,6 @@
 export { default as Badge } from "./Badge";
 export { default as CardItem } from "./CardItem";
+export { default as CounterInput } from './CounterInput';
 export { default as IconButton } from "./IconButton";
 export { default as IntroSection } from "./IntroSection";
 export { default as Modal } from './Modal';
