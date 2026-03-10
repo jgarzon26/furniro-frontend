@@ -50,7 +50,7 @@ const Selection: FC<Props & PropsWithChildren> = ({ label, className, onSelectio
     <SelectionContext value={context}>
       <input type="hidden" name={label.toLowerCase()} id={label.toLowerCase()} value={selection.value ?? ''}/>
       <article className={twMerge('flex flex-col gap-5', className)}>
-        <h6 className="text-[14px] text-shop-detail-highlight">{label}</h6>
+        <h6 className="text-[14px] text-shop-detail-highlight capitalize">{label}</h6>
         <div className='flex flex-row items-center gap-3'>
           {children}
         </div>
