@@ -101,6 +101,8 @@
   --color-shop-detail-nav-title: var(--highlight);
   --color-shop-detail-divider: var(--highlight);
   --color-shop-detail-highlight: var(--highlight);
+  --color-shop-detail-select: var(--primary-accent);
+  --color-shop-detail-active: var(--primary);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
