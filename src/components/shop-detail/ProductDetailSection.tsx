@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { ProductGallery, ProductGalleryList, ProductGallerySelected } from "./ProductGallery";
+import { Rating } from "@/components/common";
 
 const ProductDetailSection: FC = () => {
   const testids = ['1','2','3','4','5'];
