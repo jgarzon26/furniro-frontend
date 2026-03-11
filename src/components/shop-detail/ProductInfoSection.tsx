@@ -1,10 +1,15 @@
 import { FC } from "react";
 import PanelView from "./PanelView";
 import PanelNav from "./PanelNav";
+import DescriptionPanel from "./DescriptionPanel";
 
 const ProductInfoSection: FC = () => {
   return (
-    <PanelView navItem={<PanelNav />} renderItems={[]} className="h-[70dvh] border-t border-shop-detail-divider"/>
+    <PanelView 
+      navItem={<PanelNav />} 
+      renderItems={[<DescriptionPanel key={'desc'}/>]} 
+      className="h-[70dvh] border-t border-shop-detail-divider"
+    />
   );
 }
 
