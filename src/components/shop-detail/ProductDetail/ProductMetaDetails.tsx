@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
-import { Facebook, LinkedIn, Twitter } from "../common/icons";
+import { Facebook, LinkedIn, Twitter } from "@/components/common/icons";
 import { twMerge } from "tailwind-merge";
-import { IconButton } from "../common";
+import { IconButton } from "@/components/common";
 
 type Props = {
   title: string;

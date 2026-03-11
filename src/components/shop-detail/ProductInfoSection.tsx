@@ -1,9 +1,5 @@
 import { FC } from "react";
-import PanelView from "./PanelView";
-import PanelNav from "./PanelNav";
-import DescriptionPanel from "./DescriptionPanel";
-import AdditionalInfoPanel from "./AdditionalInfoPanel";
-import Reviews from "./Reviews";
+import { AdditionalInfoPanel, DescriptionPanel, PanelNav, PanelView, Reviews } from "./ProductInfo";
 
 const ProductInfoSection: FC = () => {
   return (
