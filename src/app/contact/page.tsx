@@ -1,4 +1,4 @@
-import { DetailSection } from "@/components/contact";
+import { ContactForm, DetailSection } from "@/components/contact";
 import { FC } from "react";
 
 const ContactPage: FC<PageProps<'/contact'>> = () => {
@@ -13,6 +13,9 @@ const ContactPage: FC<PageProps<'/contact'>> = () => {
       <section className="flex flex-row gap-5">
         <section className="flex flex-1 flex-col gap-10">
           <DetailSection />
+        </section>
+        <section className="flex-1">
+          <ContactForm />
         </section>
       </section>
     </main>
