@@ -5,7 +5,7 @@ const ShopDetailPage: FC<PageProps<'/shop/[slug]'>> = async ({ params }) => {
   const { slug } = await params;
 
   return (
-    <main className="*:p-10 flex flex-col gap-20">
+    <main className="*:p-10 flex flex-col gap-20 mb-30">
       <ProductDetailSection slug={slug} />
       <ProductInfoSection />
       <RelatedProductsSection />
