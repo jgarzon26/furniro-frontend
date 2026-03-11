@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
