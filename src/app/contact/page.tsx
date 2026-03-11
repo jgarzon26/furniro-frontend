@@ -1,3 +1,4 @@
+import { Spacer } from "@/components/common";
 import { ContactForm, DetailSection } from "@/components/contact";
 import { FC } from "react";
 
@@ -11,12 +12,14 @@ const ContactPage: FC<PageProps<'/contact'>> = () => {
         </p>
       </section>
       <section className="flex flex-row gap-5">
-        <section className="flex flex-1 flex-col gap-10">
+        <Spacer />
+        <section className="flex flex-2 flex-col gap-10">
           <DetailSection />
         </section>
-        <section className="flex-1">
+        <section className="flex-3">
           <ContactForm />
         </section>
+        <Spacer />
       </section>
     </main>
   );
