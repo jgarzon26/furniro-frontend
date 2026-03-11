@@ -43,14 +43,14 @@ const PanelView: FC<Props> = ({className, renderItems, navItem, navLocation = 't
   const context: PanelContextType = {
     ...panel,
     length: renderItems.length,
-    setIndex: (index) => {setPanel(prev => ({...prev, index: Math.min(Math.max(index, 0), length)}))},
+    setIndex: (index) => {setPanel(prev => ({...prev, index: Math.min(Math.max(index, 0), renderItems.length)}))},
   }
 
   return (
     <PanelContext value={context}>
       <section className={className}>
         {navLocation === 'top' && navItem}
-        {renderItems}
+        {renderItems[panel.index]}
         {navLocation === 'bottom' && navItem}
       </section>
     </PanelContext>
