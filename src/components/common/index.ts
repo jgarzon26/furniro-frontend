@@ -9,3 +9,4 @@ export { default as Rating } from './Rating';
 export { default as Spacer } from "./Spacer";
 export { default as SizedBox } from "./SizedBox";
 export { default as TextButton } from "./TextButton";
+export { default as TextField } from './TextField';
