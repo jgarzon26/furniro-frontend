@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Placeholder } from "../common";
+import { Placeholder } from "@/components/common";
 
 const DescriptionPanel: FC = () => {
   return (

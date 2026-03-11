@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Selection, SelectionItem } from "./Selection";
+import { Selection, SelectionItem } from "../Selection";
 import { twMerge } from "tailwind-merge";
 
 const SizeSelection: FC = () => {
