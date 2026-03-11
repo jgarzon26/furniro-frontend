@@ -9,10 +9,12 @@ const ProductInfoSection: FC = () => {
   return (
     <PanelView 
       navItem={<PanelNav />} 
-      renderItems={[<DescriptionPanel key={'desc'}/>]} 
-      className="h-[70dvh] border-t border-shop-detail-divider"
+      renderItems={[
+        <DescriptionPanel key={'desc'}/>, 
         <AdditionalInfoPanel  key={'info'}/>,
         <Reviews key={'reviews'}/>,
+      ]} 
+      className="h-fit border-t border-shop-detail-divider"
     />
   );
 }
