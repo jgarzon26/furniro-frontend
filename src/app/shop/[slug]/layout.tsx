@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import { NavBar } from "@/components/shop-detail";
 import { FC } from "react";
 
@@ -8,6 +9,7 @@ const ShopDetailLayout: FC<LayoutProps<'/shop/[slug]'>> = async ({children, para
     <>
       <NavBar slug={slug}/>
       {children}
+      <Footer />
     </>
   );
 }
