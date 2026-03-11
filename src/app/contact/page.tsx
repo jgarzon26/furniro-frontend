@@ -4,7 +4,7 @@ import { FC } from "react";
 
 const ContactPage: FC<PageProps<'/contact'>> = () => {
   return (
-    <main className="p-20 flex flex-col gap-10">
+    <main className="p-20 flex flex-col gap-30 mb-10">
       <section className="flex flex-col items-center justify-center gap-1">
         <h3 className="text-[36px] font-semibold">Get In Touch With Us</h3>
         <p className="text-contact-highlight w-1/3 text-center">
