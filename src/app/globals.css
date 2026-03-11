@@ -104,6 +104,8 @@
   --color-shop-detail-select: var(--primary-accent);
   --color-shop-detail-active: var(--primary);
 
+  --color-contact-highlight: var(--highlight);
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
