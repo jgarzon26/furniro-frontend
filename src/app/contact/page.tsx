@@ -1,3 +1,4 @@
+import { DetailSection } from "@/components/contact";
 import { FC } from "react";
 
 const ContactPage: FC<PageProps<'/contact'>> = () => {
@@ -8,6 +9,11 @@ const ContactPage: FC<PageProps<'/contact'>> = () => {
         <p className="text-contact-highlight w-1/3 text-center">
           For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
         </p>
+      </section>
+      <section className="flex flex-row gap-5">
+        <section className="flex flex-1 flex-col gap-10">
+          <DetailSection />
+        </section>
       </section>
     </main>
   );
