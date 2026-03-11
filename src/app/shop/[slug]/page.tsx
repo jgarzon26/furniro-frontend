@@ -7,6 +7,7 @@ const ShopDetailPage: FC<PageProps<'/shop/[slug]'>> = async ({ params }) => {
 
   return (
     <main className="px-10 py-5">
+    <main className="*:p-10 flex flex-col gap-20">
       <ProductDetailSection slug={slug}/>
     </main>
   );
