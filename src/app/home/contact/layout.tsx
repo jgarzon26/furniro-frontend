@@ -8,7 +8,7 @@ export const metaData: Metadata = {
   title: 'Contact',
 }
 
-const ContactLayout: FC<LayoutProps<'/contact'>> = ({children}) => {
+const ContactLayout: FC<LayoutProps<'/home/contact'>> = ({children}) => {
   return (
     <>
       <IntroSection />

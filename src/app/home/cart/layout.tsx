@@ -3,7 +3,7 @@ import Footer from "@/components/footer/Footer";
 import FooterBenefits from "@/components/footer/FooterBenefits";
 import { FC } from "react";
 
-const CartLayout: FC<LayoutProps<'/cart'>> = ({children}) => {
+const CartLayout: FC<LayoutProps<'/home/cart'>> = ({children}) => {
   return (
     <>
       <IntroSection />

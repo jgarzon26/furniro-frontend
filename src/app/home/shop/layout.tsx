@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Furniro Shopping Page',
 };
 
-const ShopLayout: FC<LayoutProps<'/shop'>> = ({ children }) => {
+const ShopLayout: FC<LayoutProps<'/home/shop'>> = ({ children }) => {
   const tempdata = fetchData();
 
   return (
