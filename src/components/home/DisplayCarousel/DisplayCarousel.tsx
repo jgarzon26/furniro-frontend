@@ -2,23 +2,27 @@
 
 import { createContext, FC, PropsWithChildren, useContext, useState } from "react";
 
-const LENGTH = 8;
-
 export enum Mode {
   increment,
   decrement,
 }
 
+type Props = {
+  count: number;
+}
+
 type CarouselContextType = {
   currentIndex: number;
-  length: number;
+  count: number;
   changeIndex: (mode: Mode) => void;
+  setIndex: (index: number) => void;
 }
 
 const CarouselContext = createContext<CarouselContextType>({
   currentIndex: 0,
-  length: 0,
+  count: 0,
   changeIndex() {},
+  setIndex() {},
 });
 
 export const useCarouselContext = () => {
@@ -31,29 +35,34 @@ export const useCarouselContext = () => {
   return context;
 }
 
-const DisplayCarousel: FC<PropsWithChildren> = ({children}) => {
+const DisplayCarousel: FC<Props & PropsWithChildren> = ({count, children}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const changeIndex = (mode: Mode) => {
     if(mode === Mode.increment) {
-      if(currentIndex + 1 >= LENGTH) {
+      if(currentIndex + 1 >= count) {
         setCurrentIndex(0);
       } else {
         setCurrentIndex(prev => prev + 1);
       }
     } else if(mode === Mode.decrement) {
       if(currentIndex - 1 < 0) {
-        setCurrentIndex(LENGTH - 1);
+        setCurrentIndex(count - 1);
       } else {
         setCurrentIndex(prev => prev - 1);
       }
     }
   }
 
+  const setIndex = (index: number) => {
+    setCurrentIndex(Math.min(Math.max(0, index), count));
+  }
+
   const context: CarouselContextType = {
     currentIndex,
+    count,
     changeIndex,
-    length: LENGTH,
+    setIndex,
   };
 
   return (
