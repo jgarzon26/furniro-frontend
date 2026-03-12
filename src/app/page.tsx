@@ -1,19 +1,7 @@
-import Footer from "@/components/footer/Footer";
-import { CategorySection, IntroSection, ProductSection, DisplaySection, ImageGallerySection } from "@/components/home";
+import { FC } from "react";
 
-const HomePage = () => {
-  return (
-    <>
-      <main>
-        <IntroSection />
-        <CategorySection />
-        <ProductSection />
-        <DisplaySection />
-        <ImageGallerySection />
-      </main>
-      <Footer />
-    </>
-  );
+const RootPage: FC = () => {
+  return <div />;
 }
 
-export default HomePage;
+export default RootPage;
