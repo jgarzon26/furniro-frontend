@@ -1,4 +1,5 @@
 import navs from "@/common/navs";
+import Link from "next/link";
 
 const Links = () => {
   return (
@@ -6,7 +7,11 @@ const Links = () => {
       <h6>Links</h6>
       <nav>
         {
-          navs.map((nav, index) => (<li key={index}>{nav.title}</li>))
+          navs.map(({link, title}) => (
+            <li key={link}>
+              <Link href={link}>{title}</Link>
+            </li>
+          ))
         }
       </nav>
     </div>

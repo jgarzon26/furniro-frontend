@@ -1,4 +1,4 @@
-import { CardItem, SizedBox, TextButton } from "../common";
+import { CardItem, ShowMoreButton, SizedBox } from "@/components/common";
 import HomeHeader from "./HomeHeader";
 import SectionWrapper from "./SectionWrapper";
 
@@ -19,9 +19,7 @@ const ProductSection = () => {
         <CardItem />
       </ul>
       <SizedBox height={40}/>
-      <TextButton className="px-20 py-3 bg-button-secondary text-button-secondary-foreground border border-button-secondary-foreground">
-        <TextButton.Text>Show More</TextButton.Text>
-      </TextButton>
+      <ShowMoreButton />
     </SectionWrapper>
   );
 }

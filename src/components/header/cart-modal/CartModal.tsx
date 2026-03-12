@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { IconButton } from "@/components/common";
 import { CartOff } from "@/components/common/icons";
-import ActionButton from "./ActionButton";
 import DetailListTile from "./DetailListTile";
+import Actions from "./Actions";
 
 type Props = {
   onClose?: () => void;
@@ -27,11 +27,7 @@ const CartModal: FC<Props> = ({ onClose }) => {
         <p className="text-primary font-semibold">Rs. 250,000.00</p>
       </div>
       <hr />
-      <section className="flex flex-row justify-between items-center">
-        <ActionButton>Cart</ActionButton>
-        <ActionButton>Checkout</ActionButton>
-        <ActionButton>Comparison</ActionButton>
-      </section>
+      <Actions onClose={onClose}/>
     </>
   );
 }

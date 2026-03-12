@@ -1,6 +1,6 @@
 import Image from "next/image";
 import IntroBackground from '@/assets/images/intro-background.png';
-import { TextButton } from "@/components/common";
+import BuyNowButton from "./BuyNowButton";
 
 const IntroSection = () => {
   return (
@@ -14,9 +14,7 @@ const IntroSection = () => {
           comfort, and functionality. From modern statement furniture to elegant décor accents,
           discover designs that transform every room into a place you love to live in.
         </p>
-        <TextButton className="w-1/3">
-          <p className="uppercase font-bold">Buy Now</p>
-        </TextButton>
+        <BuyNowButton />
       </div>
     </section>
   );

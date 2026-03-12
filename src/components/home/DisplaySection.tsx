@@ -1,6 +1,7 @@
-import { Placeholder, Spacer, TextButton } from "../common";
+import { Placeholder, Spacer } from "../common";
 import { CarouselIndicator, CarouselLeftButton, CarouselRightButton, DisplayCarousel, DisplayCarouselItem, DisplayCarouselList } from "./DisplayCarousel";
 import DisplayCarouselFirstItem from "./DisplayCarousel/DisplayCarouselFirstItem";
+import ExploreMoreButton from "./ExploreMoreButton";
 
 const DisplaySection = () => {
   //TODO: Make this background color rely on theme
@@ -12,9 +13,7 @@ const DisplaySection = () => {
         <p className="w-2/3">
           Our designer already made a lot of beautiful prototype of rooms that inspire you
         </p>
-        <TextButton className="w-1/2 px-0 py-2">
-          <TextButton.Text>Explore More</TextButton.Text>
-        </TextButton>
+        <ExploreMoreButton />
       </article>
       <article className="flex-7 overflow-hidden">
         <DisplayCarousel>

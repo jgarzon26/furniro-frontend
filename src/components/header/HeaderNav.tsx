@@ -1,15 +1,16 @@
+'use client';
+
 import { FC } from "react";
 import navs from "@/common/navs";
 import Link from "next/link";
-import { headers } from "next/headers";
+import { usePathname } from "next/navigation";
 
 type Props = {
   className?: string;
 };
 
-const HeaderNav: FC<Props> = async ({className}) => {
-  const headersList = await headers();
-  const pathname = headersList.get('x-current-path');
+const HeaderNav: FC<Props> = ({className}) => {
+  const pathname = usePathname();
 
   return (
     <nav className={`list-none *:px-10 ${className}`}>
