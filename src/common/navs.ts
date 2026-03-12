@@ -1,19 +1,19 @@
 const navs: {title: string, link: string; }[] = [
   {
     title: 'Home',
-    link: '',
+    link: '/home',
   },
   {
     title: 'Shop',
-    link: '',
+    link: '/home/shop',
   },
   {
     title: 'About',
-    link: '',
+    link: '/home/about',
   },
   {
     title: 'Contact',
-    link: '',
+    link: '/home/contact',
   },
 ]
 
