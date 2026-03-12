@@ -7,7 +7,8 @@ import { headers } from 'next/headers';
 
 const IntroSection = async () => {
   const headersList = await headers();
-  const pathname = (headersList.get('x-current-path'))?.substring(1);
+  const currentPath = headersList.get('x-current-path');
+  const pathname = currentPath?.substring(currentPath?.lastIndexOf('/')).slice(1);
 
   return (
     <section className='h-100 relative'>
