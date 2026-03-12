@@ -1,10 +1,10 @@
-import { Placeholder, Spacer } from "../common";
-import { CarouselIndicator, CarouselLeftButton, CarouselRightButton, DisplayCarousel, DisplayCarouselItem, DisplayCarouselList } from "./DisplayCarousel";
-import DisplayCarouselFirstItem from "./DisplayCarousel/DisplayCarouselFirstItem";
+import { Spacer } from "../common";
 import ExploreMoreButton from "./ExploreMoreButton";
+import ProductCarousel from "./ProductCarousel";
 
 const DisplaySection = () => {
   //TODO: Make this background color rely on theme
+
   return (
     <section className="flex flex-row bg-[#FCF8F3] py-10">
       <Spacer />
@@ -16,23 +16,7 @@ const DisplaySection = () => {
         <ExploreMoreButton />
       </article>
       <article className="flex-7 overflow-hidden">
-        <DisplayCarousel>
-          <CarouselLeftButton />
-          <CarouselIndicator />
-          <DisplayCarouselList>
-            <DisplayCarouselFirstItem />
-            <DisplayCarouselItem>
-              <Placeholder />
-            </DisplayCarouselItem>
-            <DisplayCarouselItem>
-              <Placeholder />
-            </DisplayCarouselItem>
-            <DisplayCarouselItem>
-              <Placeholder />
-            </DisplayCarouselItem>
-          </DisplayCarouselList>
-          <CarouselRightButton />
-        </DisplayCarousel>
+        <ProductCarousel />
       </article>
     </section>
   );
