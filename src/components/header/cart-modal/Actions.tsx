@@ -17,7 +17,10 @@ const Actions: FC<Props> = ({onClose}) => {
         onClose?.();
         router.push('/home/cart');
       }}>Cart</ActionButton>
-      <ActionButton>Checkout</ActionButton>
+      <ActionButton onClick={() => {
+        onClose?.();
+        router.push('/home/checkout');
+      }}>Checkout</ActionButton>
       <ActionButton>Comparison</ActionButton>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Spacer } from "@/components/common";
+import CheckoutButton from "./CheckoutButton";
 
 const CartDetail = () => {
   return (
@@ -18,9 +19,7 @@ const CartDetail = () => {
         </div>
       </article>
       <Spacer />
-      <button type="button" className="flex items-center justify-center border rounded-2xl w-10/12 h-15 self-center py-3">
-        <p className="text-[20px]">Check Out</p>
-      </button>
+      <CheckoutButton />
       <Spacer />
     </section>
   );
