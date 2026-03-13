@@ -28,6 +28,8 @@
     --page-button: #F9F1E7;
 
     --highlight: #9F9F9F;
+
+    --divider: #D9D9D9;
   }
 
   body {
@@ -105,6 +107,10 @@
   --color-shop-detail-active: var(--primary);
 
   --color-contact-highlight: var(--highlight);
+
+  --color-checkout-highlight: var(--highlight);
+
+  --color-checkout-divider: var(--divider);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
