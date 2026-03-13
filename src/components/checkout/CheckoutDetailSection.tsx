@@ -1,6 +1,7 @@
 import { FC } from "react";
 import CheckoutListTile from "./CheckoutListTile";
 import { TextButton } from "@/components/common";
+import ProductDetailTile from "./ProductDetailTile";
 
 const CheckoutDetailSection: FC = () => {
   return (
@@ -12,19 +13,7 @@ const CheckoutDetailSection: FC = () => {
           subtitle={'h4'}
           subtitleChildren='Subtotal'
         />
-        <CheckoutListTile
-          title={'div'}
-          titleChildren={
-            <>
-              <h6 className="text-checkout-highlight">Asgaard Sofa</h6>
-              <span>x</span>
-              <span>1</span>
-            </>
-          }
-          titleClassName="flex flex-row items-center gap-3"
-          subtitle={'p'}
-          subtitleChildren={`Rs. 250,000.00`}
-        />
+        <ProductDetailTile />
         <CheckoutListTile
           title={'p'}
           titleChildren='Subtotal'
