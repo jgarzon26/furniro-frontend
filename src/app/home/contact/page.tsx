@@ -2,7 +2,7 @@ import { Spacer } from "@/components/common";
 import { ContactForm, DetailSection } from "@/components/contact";
 import { FC } from "react";
 
-const ContactPage: FC<PageProps<'/contact'>> = () => {
+const ContactPage: FC = () => {
   return (
     <main className="p-20 flex flex-col gap-30 mb-10">
       <section className="flex flex-col items-center justify-center gap-1">

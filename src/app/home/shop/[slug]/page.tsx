@@ -1,7 +1,7 @@
 import { ProductDetailSection, ProductInfoSection, RelatedProductsSection } from "@/components/shop-detail";
 import { FC } from "react";
 
-const ShopDetailPage: FC<PageProps<'/shop/[slug]'>> = async ({ params }) => {
+const ShopDetailPage: FC<PageProps<'/home/shop/[slug]'>> = async ({ params }) => {
   const { slug } = await params;
 
   return (
