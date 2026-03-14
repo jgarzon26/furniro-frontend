@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { Metadata } from "next";
-import ShopOptionsProvider from "@/providers/ShopOptionsProvider";
-import { SWRConfig } from "swr";
-import { fetchData } from "@/lib/api";
+import ShopDataWrapper from "@/components/shop/ShopDataWrapper";
+import { Providers } from "@/components/shop";
 
 export const metadata: Metadata = {
   title: 'Shop',
@@ -10,14 +9,12 @@ export const metadata: Metadata = {
 };
 
 const ShopLayout: FC<LayoutProps<'/home/shop'>> = ({ children }) => {
-  const tempdata = fetchData();
-
   return (
-    <SWRConfig value={{fallback: {'/api/shop': tempdata}}}>
-      <ShopOptionsProvider>
+    <Providers>
+      <ShopDataWrapper>
         {children}
-      </ShopOptionsProvider>
-    </SWRConfig>
+      </ShopDataWrapper>
+    </Providers>
   );
 }
 

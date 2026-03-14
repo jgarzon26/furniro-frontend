@@ -5,6 +5,7 @@ import { createShopOptionsStore } from "@/stores/shop-options-store";
 
 const ShopOptionsProvider: FC<PropsWithChildren> = ({children}) => {
   const [store] = useState(() => createShopOptionsStore());
+
   return (
     <ShopOptionsContext value={store}>
       {children}

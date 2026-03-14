@@ -1,9 +1,12 @@
 import { createStore } from "zustand";
 
 export type ShopOptionsState = {
+  //items per page
   show: number;
   short: string;
+  //current page number
   page: number;
+  //total count of products
   count: number;
 }
 

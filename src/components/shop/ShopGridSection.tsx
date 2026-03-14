@@ -1,16 +1,16 @@
 'use client';
 
-import { useShopOptionsStore } from "@/hooks/useShopOptionsStore";
 import { CardItem } from "../common";
+import useShopQuery from "@/hooks/useShopQuery";
 
 const ShopGridSection = () => {
-  const { show } = useShopOptionsStore(state => state);
+  const { currentItems } = useShopQuery();
 
   return (
     <section className="p-20">
       <ul className="grid grid-cols-5 gap-7">
         {
-          Array.from({length: show}).map((_, index) => (
+          currentItems.map((_, index) => (
             <CardItem key={index}/>
           ))
         }
