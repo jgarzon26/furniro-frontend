@@ -1,4 +1,4 @@
-import {
+/* import {
   QueryClient,
   defaultShouldDehydrateQuery,
   isServer,
@@ -34,5 +34,4 @@ export function getQueryClient() {
     if (!browserQueryClient) browserQueryClient = makeQueryClient()
     return browserQueryClient
   }
-}
-
+} */

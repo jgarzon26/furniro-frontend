@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Metadata } from "next";
 import ShopDataWrapper from "@/components/shop/ShopDataWrapper";
-import { Providers } from "@/components/shop";
+import ShopOptionsProvider from "@/providers/ShopOptionsProvider";
 
 export const metadata: Metadata = {
   title: 'Shop',
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 const ShopLayout: FC<LayoutProps<'/home/shop'>> = ({ children }) => {
   return (
-    <Providers>
+    <ShopOptionsProvider>
       <ShopDataWrapper>
         {children}
       </ShopDataWrapper>
-    </Providers>
+    </ShopOptionsProvider>
   );
 }
 
