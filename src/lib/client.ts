@@ -3,7 +3,6 @@ import { ApolloClient, InMemoryCache, registerApolloClient } from "@apollo/clien
 import { GraphQLURL } from "./api";
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
-  'use server';
   return new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({

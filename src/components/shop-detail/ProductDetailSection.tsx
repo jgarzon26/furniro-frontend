@@ -2,12 +2,13 @@ import { FC } from "react";
 import { ProductGallery, ProductGalleryList, ProductGallerySelected } from "./ProductGallery";
 import { Rating } from "@/components/common";
 import { ColorSelection, ProductMetaDetails, ShopActions, SizeSelection } from "./ProductDetail";
+import { ProductQueryRef } from "@/types/queries";
 
 type Props = {
-  slug: string;
+  queryRef: ProductQueryRef
 }
 
-const ProductDetailSection: FC<Props> = ({slug}) => {
+const ProductDetailSection: FC<Props> = ({ queryRef }) => {
   const testids = ['1','2','3','4','5'];
 
   return (
