@@ -1,17 +1,14 @@
 'use client';
 
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { useShopOptionsStore } from "./useShopOptionsStore";
-import { fetchData } from "@/lib/api";
+import { useReadQuery } from "@apollo/client/react";
+import { useShopQueryRefContext } from "@/components/shop/ShopSection";
 
 const useShopQuery = () => {
-  const { page, show } = useShopOptionsStore(state => state);
-  const { data } = useSuspenseQuery({
-    queryKey: ['shop', page, show],
-    queryFn: () => fetchData(page, show),
-  });
+  const queryRef = useShopQueryRefContext();
+  const { data, error } = useReadQuery(queryRef);
+  const { products } = data;
 
-  return { ...data };
+  return { ...products, error };
 }
 
 export default useShopQuery;
