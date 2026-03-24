@@ -20,9 +20,22 @@ export const GET_PRODUCTS_BY_PAGE: TypedDocumentNode<
         subtitle
         price
         discountedPrice
+        images
       },
       totalPages
     }
+  }
+`;
+
+export const PRODUCT_SHORT: TypedDocumentNode = gql`
+  fragment ProductShort on Product {
+    sku
+    slug
+    title
+    subtitle
+    price
+    discountedPrice
+    images
   }
 `;
 
