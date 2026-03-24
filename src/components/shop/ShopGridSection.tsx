@@ -4,17 +4,24 @@ import { CardItem } from "../common";
 import useShopQuery from "@/hooks/useShopQuery";
 
 const ShopGridSection = () => {
-  const { currentItems } = useShopQuery();
+  const { items } = useShopQuery();
 
   return (
     <section className="p-20">
-      <ul className="grid grid-cols-5 gap-7">
-        {
-          currentItems.map((_, index) => (
-            <CardItem key={index}/>
-          ))
-        }
-      </ul>
+      {
+        items.length > 0 ? (
+          <ul className="grid grid-cols-5 gap-7">
+            {
+              items.map((item, index) => (
+                <CardItem key={index} />
+              ))
+            }
+          </ul>
+        ) : (
+          <h2>No Products</h2>
+        )
+
+      }
     </section>
   )
 }

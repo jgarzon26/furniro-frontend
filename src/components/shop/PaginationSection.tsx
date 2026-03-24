@@ -13,7 +13,7 @@ const PaginationSection = () => {
   const setupPages = useCallback(() => {
     const pages: number[][] = [];
     let currentNumber = 1;
-    const totalNumbers = totalPages;
+    const totalNumbers = totalPages!;
 
     while (currentNumber <= totalNumbers) {
       const remainingNumbers = totalNumbers - currentNumber + 1;

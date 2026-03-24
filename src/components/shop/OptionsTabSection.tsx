@@ -2,8 +2,9 @@ import { IconButton } from "../common";
 import { Filter, Grid, ViewList } from "../common/icons";
 import OptionInputs from "./OptionInputs";
 import ResultText from "./ResultText";
+import { FC } from "react";
 
-const OptionsTabSection = () => {
+const OptionsTabSection: FC = () => {
   return (
     <section className="h-25 w-full flex flex-row items-center justify-between bg-shop-option px-20">
       <div className="flex flex-row items-center gap-5">

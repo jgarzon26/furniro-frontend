@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Metadata } from "next";
-import ShopDataWrapper from "@/components/shop/ShopDataWrapper";
 import ShopOptionsProvider from "@/providers/ShopOptionsProvider";
 
 export const metadata: Metadata = {
@@ -11,9 +10,7 @@ export const metadata: Metadata = {
 const ShopLayout: FC<LayoutProps<'/home/shop'>> = ({ children }) => {
   return (
     <ShopOptionsProvider>
-      <ShopDataWrapper>
-        {children}
-      </ShopDataWrapper>
+      {children}
     </ShopOptionsProvider>
   );
 }
