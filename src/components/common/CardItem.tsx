@@ -1,8 +1,13 @@
 import Image, { StaticImageData } from "next/image";
 import Badge from "./Badge";
-import Placeholder from "./Placeholder";
 import TextButton from "./TextButton";
 import { Compare, Favorite, Share } from "@/assets/icons";
+import { FC } from "react";
+import { ProductShortFragment } from "@/types/generated/graphql";
+
+type Props = {
+  product: ProductShortFragment;
+}
 
 const icons: {title: string, icon: StaticImageData}[] = [
   {
@@ -19,20 +24,22 @@ const icons: {title: string, icon: StaticImageData}[] = [
   }
 ];
 
-const CardItem = () => {
+const CardItem: FC<Props> = ({ product }) => {
+  const { sku, slug, title, subtitle, price, discountedPrice, images } = product;
+
   return (
     <li className="relative h-125 w-75 group *:duration-300">
       <article className="absolute w-full h-full bg-card-background flex flex-col">
         <div className="flex-1 relative">
-          <Placeholder />
+          <Image src={images[0] ?? ''} alt={title} fill/>
           <Badge />
         </div>
         <div className="flex flex-col gap-1 p-5">
-          <h4>Title</h4>
-          <p className="text-card-desc">Subtitle</p>
+          <h4>{title}</h4>
+          <p className="text-card-desc">{subtitle}</p>
           <div className="flex flex-row justify-between items-center">
-            <h5 className="text-[20px]">Fixed Price</h5>
-            <p className="text-card-desc line-through">Discount Price</p>
+            <h5 className={`text-[20px] ${discountedPrice && 'text-decoration-line'}`}>${discountedPrice ? discountedPrice : price}</h5>
+            <p className="text-card-desc line-through">{discountedPrice && `$${price}`}</p>
           </div>
         </div>
       </article>

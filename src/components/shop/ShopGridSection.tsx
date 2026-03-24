@@ -12,8 +12,8 @@ const ShopGridSection = () => {
         items.length > 0 ? (
           <ul className="grid grid-cols-5 gap-7">
             {
-              items.map((item, index) => (
-                <CardItem key={index} />
+              items.map((item) => (
+                <CardItem key={item.slug} product={item}/>
               ))
             }
           </ul>
