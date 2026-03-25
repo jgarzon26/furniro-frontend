@@ -1,4 +1,5 @@
 import { ProductDetailSection, ProductInfoSection, RelatedProductsSection } from "@/components/shop-detail";
+import ProductDetailWrapper from "@/components/shop-detail/ProductDetail/ProductDetailWrapper";
 import { PreloadQuery } from "@/lib/client";
 import { GET_PRODUCT } from "@/lib/documents/products";
 import { FC, Suspense } from "react";
@@ -12,8 +13,10 @@ const ShopDetailPage: FC<PageProps<'/home/shop/[slug]'>> = async ({ params }) =>
         {
           (queryRef) => (
             <Suspense>
-              <ProductDetailSection queryRef={queryRef} />
-              <ProductInfoSection queryRef={queryRef}/>
+              <ProductDetailWrapper queryRef={queryRef}>
+                <ProductDetailSection />
+                <ProductInfoSection />
+              </ProductDetailWrapper>
             </Suspense>
           )
         }
