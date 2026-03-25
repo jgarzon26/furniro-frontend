@@ -22,7 +22,7 @@ const ShopDetailPage: FC<PageProps<'/home/shop/[slug]'>> = async ({ params }) =>
         }
       </PreloadQuery>
       <Suspense>
-        <RelatedProductsSection />
+        <RelatedProductsSection slug={slug}/>
       </Suspense>
     </main>
   );

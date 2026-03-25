@@ -3,6 +3,8 @@ import {
   GetProductQueryVariables,
   GetProductsByPageQuery,
   GetProductsByPageQueryVariables,
+  GetRelatedProductsQuery,
+  GetRelatedProductsQueryVariables,
 } from "@/types/generated/graphql";
 import { gql, TypedDocumentNode } from "@apollo/client";
 
@@ -56,6 +58,20 @@ export const GET_PRODUCT: TypedDocumentNode<GetProductQuery, GetProductQueryVari
         title
         comment
       }
+    }
+  }
+`;
+
+export const GET_RELATED_PRODUCTS: TypedDocumentNode<GetRelatedProductsQuery, GetRelatedProductsQueryVariables> = gql`
+  query GetRelatedProducts($options: ProductsRelatedOption!) {
+    relatedProducts(options: $options) {
+      sku
+      slug
+      title
+      subtitle
+      price
+      discountedPrice
+      images
     }
   }
 `;

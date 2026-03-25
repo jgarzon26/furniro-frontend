@@ -1,14 +1,36 @@
 import { FC } from "react";
 import { CardItem, TextButton } from "@/components/common";
+import { query } from "@/lib/client";
+import { GET_RELATED_PRODUCTS } from "@/lib/documents/products";
 
-const RelatedProductsSection: FC = () => {
+type Props = {
+  slug: string;
+}
+
+const RelatedProductsSection: FC<Props> = async ({ slug }) => {
+  const { data } = await query({
+    query: GET_RELATED_PRODUCTS,
+    variables: {
+      options: {
+        slug,
+        limit: 6,
+      },
+    },
+  });
+  
+  if(!data) {
+    return null;
+  }
+
+  const { relatedProducts } = data;
+
   return (
     <section className="flex flex-col items-center justify-center gap-10 border-t border-t-shop-detail-divider">
       <h3 className="text-[36px]">Related Products</h3>
       <ul className="flex flex-row justify-center items-center gap-5">
         {
-          Array.from({length: 5}).map((_, index) => (
-            <CardItem key={index}/>
+          relatedProducts.map((item) => (
+            <CardItem key={item.slug} product={item}/>
           ))
         }
       </ul>
