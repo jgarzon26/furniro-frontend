@@ -1,14 +1,7 @@
 import { FC } from "react";
 import { AdditionalInfoPanel, DescriptionPanel, PanelNav, PanelView, Reviews } from "./ProductInfo";
-import { ProductQueryRef } from "@/types/queries";
 
-type Props = {
-  queryRef: ProductQueryRef;
-}
-
-const ProductInfoSection: FC<Props> = ({queryRef}) => {
-
-
+const ProductInfoSection: FC = () => {
   return (
     <PanelView 
       navItem={<PanelNav />} 
