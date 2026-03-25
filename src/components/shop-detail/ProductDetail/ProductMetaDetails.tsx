@@ -7,7 +7,7 @@ import MetaListTile from "./MetaListTile";
 import useShopDetailQuery from "@/hooks/useShopDetailQuery";
 
 const ProductMetaDetails: FC = () => {
-  const { sku, tags } = useShopDetailQuery();
+  const { sku, tags, category } = useShopDetailQuery();
   const iconSize = 20;
 
   return (
@@ -15,7 +15,7 @@ const ProductMetaDetails: FC = () => {
       <hr className="my-5 border-shop-detail-divider"/>
       <article className="w-2/3 flex flex-col gap-3">
         <MetaListTile title="SKU">{sku}</MetaListTile>
-        <MetaListTile title="Category">Sofas</MetaListTile>
+        <MetaListTile title="Category">{category.title}</MetaListTile>
         <MetaListTile title="Tags">
           {
             tags && tags.join(',')

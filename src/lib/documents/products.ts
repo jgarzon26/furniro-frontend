@@ -53,7 +53,10 @@ export const GET_PRODUCT: TypedDocumentNode<GetProductQuery, GetProductQueryVari
       discountedPrice
       images
       tags
-      category
+      category {
+        slug
+        title
+      }
       reviews {
         title
         comment
