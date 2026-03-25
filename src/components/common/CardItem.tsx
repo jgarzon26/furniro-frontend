@@ -5,9 +5,11 @@ import { Compare, Favorite, Share } from "@/assets/icons";
 import { FC } from "react";
 import { ProductShortFragment } from "@/types/generated/graphql";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   product: ProductShortFragment;
+  className?: string;
 }
 
 const icons: { title: string, icon: StaticImageData }[] = [
@@ -25,11 +27,11 @@ const icons: { title: string, icon: StaticImageData }[] = [
   }
 ];
 
-const CardItem: FC<Props> = ({ product }) => {
+const CardItem: FC<Props> = ({ product, className }) => {
   const { sku, slug, title, subtitle, price, discountedPrice, images } = product;
 
   return (
-    <li className="relative h-125 w-75 group *:duration-300">
+    <li className={twMerge("relative h-125 w-75 group *:duration-300", className)}>
       <Link href={`/home/shop/${slug}`}>
         <article className="absolute w-full h-full bg-card-background flex flex-col">
           <div className="flex-1 relative">

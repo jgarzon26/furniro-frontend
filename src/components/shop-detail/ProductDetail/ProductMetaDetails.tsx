@@ -18,7 +18,7 @@ const ProductMetaDetails: FC = () => {
         <MetaListTile title="Category">{category.title}</MetaListTile>
         <MetaListTile title="Tags">
           {
-            tags && tags.join(',')
+            tags && tags.join(', ')
           }
         </MetaListTile>
         <MetaListTile title="Share" className="[&_svg]:text-foreground" descClassName="gap-3">

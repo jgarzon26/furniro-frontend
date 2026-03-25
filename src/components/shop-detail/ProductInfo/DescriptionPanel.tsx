@@ -1,20 +1,25 @@
 'use client';
 
 import { FC } from "react";
-import { Placeholder } from "@/components/common";
 import useShopDetailQuery from "@/hooks/useShopDetailQuery";
+import Image from "next/image";
+import PanelWrapper from "./PanelWrapper";
 
 const DescriptionPanel: FC = () => {
-  const { description } = useShopDetailQuery();
+  const { description, images } = useShopDetailQuery();
 
   return (
-    <article className="px-20 py-10 flex flex-col gap-10 text-shop-detail-highlight">
+    <PanelWrapper>
       <p>{description}</p>
       <div className="flex flex-row gap-10">
-        <Placeholder className="flex-1 aspect-3/2"/>
-        <Placeholder className="flex-1 aspect-3/2"/>
+        <div className="flex-1 aspect-3/2 relative">
+          <Image src={images[2] ?? ''} alt={images[2] ?? ''} fill />
+        </div>
+        <div className="flex-1 aspect-3/2 relative">
+          <Image src={images[3] ?? ''} alt={images[3] ?? ''} fill />
+        </div>
       </div>
-    </article>
+    </PanelWrapper>
   );
 }
 

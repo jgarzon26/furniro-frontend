@@ -2,14 +2,14 @@
 
 import { FC } from "react";
 import { useProductGalleryContext } from "./ProductGallery";
-import { Placeholder } from "@/components/common";
+import Image from 'next/image';
 
 const ProductGallerySelected: FC = () => {
   const { id } = useProductGalleryContext();
 
   return (
-    <article className="flex-5">
-      <Placeholder>{id}</Placeholder>
+    <article className="flex-5 relative">
+      <Image src={id} alt={`selected ${id}`} fill/>
     </article>
   );
 }

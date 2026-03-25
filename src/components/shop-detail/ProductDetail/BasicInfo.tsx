@@ -12,9 +12,9 @@ const BasicInfo: FC = () => {
       <article>
         <h2 className="font-normal text-[42px]">{title}</h2>
         <div className="flex flex-row gap-5">
-          <h4 className="font-medium text-shop-detail-highlight">{discountedPrice ? discountedPrice : price}</h4>
+          <h4 className="font-medium text-shop-detail-highlight">${discountedPrice ? discountedPrice : price}</h4>
           {discountedPrice && (
-            <h5 className="text-[16px] line-through">{price}</h5>
+            <h5 className="text-[16px] line-through">${price}</h5>
           )}
         </div>
       </article>

@@ -12,7 +12,7 @@ const ProductGalleryList: FC = () => {
   return (
     <article className="flex flex-1 flex-col gap-10 mb-20">
       {
-        images.map(item => <ProductGalleryItem key={item} id={item}/>)
+        images.map(item => <ProductGalleryItem key={item} item={item} />)
       }
     </article>
   );

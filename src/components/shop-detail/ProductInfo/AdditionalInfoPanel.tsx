@@ -1,8 +1,9 @@
 import { FC } from "react";
+import PanelWrapper from "./PanelWrapper";
 
 const AdditonalInfoPanel: FC = () => {
   return (
-    <article>
+    <PanelWrapper>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus lobortis nulla lacinia ultricies. 
         Curabitur ultricies placerat dolor, ut scelerisque purus mollis vel. Curabitur dapibus dolor justo, eu mattis tellus pretium ac. 
@@ -22,7 +23,7 @@ const AdditonalInfoPanel: FC = () => {
         Fusce accumsan quam at lacus ultrices molestie. Mauris fermentum sit amet nunc vel pharetra. 
         Curabitur lacus risus, imperdiet eget nulla eu, imperdiet lobortis risus.
       </p>
-    </article>
+    </PanelWrapper>
   );
 }
 

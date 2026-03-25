@@ -27,10 +27,10 @@ const RelatedProductsSection: FC<Props> = async ({ slug }) => {
   return (
     <section className="flex flex-col items-center justify-center gap-10 border-t border-t-shop-detail-divider">
       <h3 className="text-[36px]">Related Products</h3>
-      <ul className="flex flex-row justify-center items-center gap-5">
+      <ul className="w-full flex flex-row justify-stretch items-center gap-5 overflow-x-auto overflow-y-hidden px-30">
         {
           relatedProducts.map((item) => (
-            <CardItem key={item.slug} product={item}/>
+            <CardItem key={item.slug} product={item} className="shrink-0"/>
           ))
         }
       </ul>

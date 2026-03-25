@@ -2,27 +2,27 @@
 
 import { FC } from "react";
 import { useProductGalleryContext } from "./ProductGallery";
-import { Placeholder } from "@/components/common";
+import Image from 'next/image';
 
 type Props = {
-  id: string;
+  item: string;
 }
 
-const ProductGalleryItem: FC<Props> = ({id}) => {
-  const { id: pid, setId } = useProductGalleryContext();
+const ProductGalleryItem: FC<Props> = ({ item }) => {
+  const { id, setId } = useProductGalleryContext();
 
   const onClickHandle = () => {
-    if(id === pid) {
+    if (item === id) {
       return;
     }
 
-    setId(id);
+    setId(item);
   }
 
   //? id is temporary. Use Image Comp when using api
   return (
-    <div className="h-full w-full rounded-[10px]" onClick={onClickHandle}>
-      <Placeholder>{id}</Placeholder>
+    <div className="h-full w-full rounded-[10px] relative" onClick={onClickHandle}>
+      <Image src={item} alt={item} fill/>
     </div>
   );
 }
