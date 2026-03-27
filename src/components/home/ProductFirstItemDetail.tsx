@@ -1,5 +1,8 @@
+'use client';
+
 import { FC } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { useCarouselContext } from "../common/Carousel";
 
 type Props = {
   title: string;
@@ -8,11 +11,13 @@ type Props = {
 }
 
 const ProductFirstItemDetail: FC<Props> = ({title, category, onClick}) => {
+  const { index } = useCarouselContext();
+
   return (
     <div className="absolute left-5 bottom-5 w-3/4 h-1/5 flex flex-row">
       <div className="h-full w-full bg-primary-foreground flex flex-col px-5 justify-center">
         <span className="flex flex-row items-center gap-3 text-paragraph-desc">
-          <p>01</p>
+          <p>{`${index + 1 < 10 ? '0' : ''}${index + 1}`}</p>
           <hr className="w-1/8" />
           <p>{category}</p>
         </span>
