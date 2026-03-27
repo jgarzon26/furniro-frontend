@@ -3,6 +3,8 @@ import {
   GetProductQueryVariables,
   GetProductsByPageQuery,
   GetProductsByPageQueryVariables,
+  GetRandomProductsQuery,
+  GetRandomProductsQueryVariables,
   GetRelatedProductsQuery,
   GetRelatedProductsQueryVariables,
 } from "@/types/generated/graphql";
@@ -75,6 +77,23 @@ export const GET_RELATED_PRODUCTS: TypedDocumentNode<GetRelatedProductsQuery, Ge
       price
       discountedPrice
       images
+    }
+  }
+`;
+
+export const GET_RANDOM_PRODUCTS: TypedDocumentNode<GetRandomProductsQuery, GetRandomProductsQueryVariables> = gql`
+  query GetRandomProducts($options: RandomProductsOption!) {
+    randomProducts(options: $options) {
+      sku
+      slug
+      title
+      subtitle
+      price
+      discountedPrice
+      images
+      category {
+        title
+      }
     }
   }
 `;
