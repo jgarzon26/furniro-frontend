@@ -10,8 +10,8 @@ const CategoryListItem: FC<Props> = ({ category }) => {
   const { title } = category;
 
   return (
-    <li className="flex flex-col items-center">
-      <Placeholder className="aspect-2/3 rounded-[10px] h-11/12"/>
+    <li className="flex flex-col items-center aspect-2/3 h-75 relative">
+      <Placeholder className="rounded-[10px] h-11/12"/>
       <h4>{title}</h4>
     </li>
   );

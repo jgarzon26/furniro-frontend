@@ -1,27 +1,27 @@
-import { query } from "@/lib/client";
-import { GET_CATEGORIES } from "@/lib/documents/categories";
+'use client';
+
 import { FC } from "react";
 import CategoryListItem from "./CategoryListItem";
+import { Carousel, CarouselLeftButton, CarouselRightButton } from "@/components/common/Carousel";
+import CarouselList from "../common/Carousel/CarouselList";
+import { Category } from "@/types/generated/graphql";
 
-const CategoryListView: FC = async () => {
-  const { data, error } = await query({
-    query: GET_CATEGORIES,
-  });
+type Props = {
+  categories: Category[];
+}
 
-  if(!data && error) {
-    return <p>Failed to fetch categories</p>
-  }
-
-  const { categories } = data!;
-
+const CategoryListView: FC<Props> = ({ categories }) => {
   return (
-    <ul className="flex flex-row gap-5 justify-stretch w-2/3 h-100 overflow-x-auto overflow-y-hidden px-10 py-5">
-      {
-        categories.map(cat => (
+    <Carousel count={categories.length}>
+      <CarouselLeftButton />
+      <CarouselList 
+        data={categories}
+        renderItems={cat => (
           <CategoryListItem key={cat.slug} category={cat}/>
-        ))
-      }
-    </ul>
+        )}
+      />
+      <CarouselRightButton />
+    </Carousel>
   );
 }
 

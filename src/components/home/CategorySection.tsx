@@ -1,8 +1,14 @@
+import { query } from "@/lib/client";
 import CategoryListView from "./CategoryListView";
 import HomeHeader from "./HomeHeader";
 import SectionWrapper from "./SectionWrapper";
+import { GET_CATEGORIES } from "@/lib/documents/categories";
 
-const CategorySection = () => {
+const CategorySection = async () => {
+  const { data, error } = await query({
+    query: GET_CATEGORIES,
+  });
+
   return (
     <SectionWrapper>
       <HomeHeader>
@@ -13,7 +19,8 @@ const CategorySection = () => {
           décor crafted to transform your space with comfort and sophistication.
         </HomeHeader.Subtitle>
       </HomeHeader>
-      <CategoryListView />
+      {error && <p>Error fetch categories</p>}
+      {data && <CategoryListView categories={data.categories}/>}
     </SectionWrapper>
   );
 }
