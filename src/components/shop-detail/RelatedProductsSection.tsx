@@ -2,38 +2,28 @@ import { FC } from "react";
 import { CardItem, TextButton } from "@/components/common";
 import { query } from "@/lib/client";
 import { GET_RELATED_PRODUCTS } from "@/lib/documents/products";
+import RelatedProductsList from "./RelatedProductsList";
 
 type Props = {
   slug: string;
 }
 
 const RelatedProductsSection: FC<Props> = async ({ slug }) => {
-  const { data } = await query({
+  const { data, error } = await query({
     query: GET_RELATED_PRODUCTS,
     variables: {
       options: {
         slug,
-        limit: 6,
+        limit: 15,
       },
     },
   });
-  
-  if(!data) {
-    return null;
-  }
-
-  const { relatedProducts } = data;
 
   return (
     <section className="flex flex-col items-center justify-center gap-10 border-t border-t-shop-detail-divider">
       <h3 className="text-[36px]">Related Products</h3>
-      <ul className="w-full flex flex-row justify-stretch items-center gap-5 overflow-x-auto overflow-y-hidden px-30">
-        {
-          relatedProducts.map((item) => (
-            <CardItem key={item.slug} product={item} className="shrink-0"/>
-          ))
-        }
-      </ul>
+      {error && <p>Error fetching related products</p>}
+      {data && <RelatedProductsList data={data}/>}
       <TextButton className="bg-transparent border border-primary py-2 group hover:bg-primary duration-300">
         <TextButton.Text className="text-primary group-hover:text-primary-foreground">Show More</TextButton.Text>
       </TextButton>
