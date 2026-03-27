@@ -12,15 +12,15 @@ type Props = {
 
 const CategoryListView: FC<Props> = ({ categories }) => {
   return (
-    <Carousel count={categories.length}>
-      <CarouselLeftButton />
+    <Carousel count={categories.length} itemsPerView={3}>
+      <CarouselLeftButton disabledOnFirstIndex />
       <CarouselList 
         data={categories}
         renderItems={cat => (
           <CategoryListItem key={cat.slug} category={cat}/>
         )}
       />
-      <CarouselRightButton />
+      <CarouselRightButton className="static ml-5"/>
     </Carousel>
   );
 }
