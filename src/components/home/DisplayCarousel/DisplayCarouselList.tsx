@@ -9,8 +9,8 @@ type Props<T> = {
   renderItems: (item: T) => ReactNode;
 };
 
-const DisplayCarouselList = <T,>({data, renderFirstItem, renderItems}: Props<T>) => {
-  const { currentIndex } = useCarouselContext();
+const DisplayCarouselList = <T,>({ data, renderFirstItem, renderItems }: Props<T>) => {
+  const { index: currentIndex } = useCarouselContext();
   const render = [...data.slice(currentIndex + 1)];
 
   return (
