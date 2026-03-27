@@ -1,23 +1,16 @@
-import { CardItem, ShowMoreButton, SizedBox } from "@/components/common";
+import { ShowMoreButton, SizedBox } from "@/components/common";
 import HomeHeader from "./HomeHeader";
 import SectionWrapper from "./SectionWrapper";
+import ProductGridView from "./ProductGridView";
 
-const ProductSection = () => {
+const ProductSection = async () => {
+  
   return (
     <SectionWrapper>
       <HomeHeader className="mb-5">
         <h2>Our Products</h2>
       </HomeHeader>
-      <ul className="grid grid-cols-4 gap-7">
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-      </ul>
+      <ProductGridView />
       <SizedBox height={40}/>
       <ShowMoreButton />
     </SectionWrapper>

@@ -2,27 +2,42 @@
 
 import { FC } from "react";
 import { CarouselIndicator, CarouselLeftButton, CarouselRightButton, DisplayCarousel, DisplayCarouselFirstItem, DisplayCarouselItem, DisplayCarouselList } from "./DisplayCarousel";
-import { Placeholder } from "@/components/common";
 import ProductFirstItemDetail from "./ProductFirstItemDetail";
+import { GetRandomProductsQuery } from "@/types/generated/graphql";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const ProductCarousel: FC = () => {
-  const test = [1,2,3,4,5];
+type Props = {
+  query: GetRandomProductsQuery;
+}
+
+const ProductCarousel: FC<Props> = ({query}) => {
+  const products = query.randomProducts;
+  const { push } = useRouter();
 
   return (
-    <DisplayCarousel count={test.length}>
+    <DisplayCarousel count={products.length}>
       <CarouselLeftButton />
       <CarouselIndicator />
       <DisplayCarouselList 
-        data={test}
-        renderFirstItem={(item => (
+        data={products}
+        renderFirstItem={(({slug, title, images, category}) => (
           <DisplayCarouselFirstItem 
-            background={<Placeholder>{item}</Placeholder>}
-            foreground={<ProductFirstItemDetail />}
+            background={<Image src={images[0] ?? ''} alt={title} fill/>}
+            foreground={
+              <ProductFirstItemDetail 
+                title={title} 
+                category={category.title}
+                onClick={() => push(`/home/shop/${slug}`)}
+              />
+            }
           />
         ))}
-        renderItems={(item) => (
-          <DisplayCarouselItem key={item}>
-            <Placeholder>{item}</Placeholder>
+        renderItems={({slug, title, images}) => (
+          <DisplayCarouselItem key={slug}>
+            <div className="relative h-full w-full">
+              <Image src={images[0] ?? ''} alt={title} fill/>
+            </div>
           </DisplayCarouselItem>
         )}
       />
