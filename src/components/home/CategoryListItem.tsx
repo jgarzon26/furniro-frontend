@@ -1,10 +1,18 @@
+import { Category } from "@/types/generated/graphql";
 import { Placeholder } from "../common";
+import { FC } from "react";
 
-const CategoryListItem = () => {
+type Props = {
+  category: Category;
+}
+
+const CategoryListItem: FC<Props> = ({ category }) => {
+  const { title } = category;
+
   return (
     <li className="flex flex-col items-center">
       <Placeholder className="aspect-2/3 rounded-[10px] h-11/12"/>
-      <h4>Title</h4>
+      <h4>{title}</h4>
     </li>
   );
 }

@@ -1,4 +1,4 @@
-import CategoryListItem from "./CategoryListItem";
+import CategoryListView from "./CategoryListView";
 import HomeHeader from "./HomeHeader";
 import SectionWrapper from "./SectionWrapper";
 
@@ -13,11 +13,7 @@ const CategorySection = () => {
           décor crafted to transform your space with comfort and sophistication.
         </HomeHeader.Subtitle>
       </HomeHeader>
-      <ul className="flex flex-row gap-5 justify-center w-full h-100">
-        <CategoryListItem />
-        <CategoryListItem />
-        <CategoryListItem />
-      </ul>
+      <CategoryListView />
     </SectionWrapper>
   );
 }
