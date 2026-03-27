@@ -50,7 +50,7 @@ const Carousel: FC<Props & PropsWithChildren> = ({ count, itemsPerView, children
   const changeIndex = (mode: Mode) => {
     const { index: currentIndex } = carousel;
     if (mode === Mode.increment) {
-      if (currentIndex + 1 >= count) {
+      if (currentIndex + carousel.itemsPerView >= count) {
         setCarousel(prev => ({ ...prev, index: 0 }));
       } else {
         setCarousel(prev => ({ ...prev, index: prev.index + prev.itemsPerView}));
