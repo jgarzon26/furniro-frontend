@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from "react";
-import { useCarouselContext } from "./DisplayCarousel";
+import { useCarouselContext } from "@/components/common/Carousel";
 
 type Props<T> = {
   data: readonly T[];

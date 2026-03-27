@@ -35,7 +35,7 @@ export const useCarouselContext = () => {
   return context;
 }
 
-const DisplayCarousel: FC<Props & PropsWithChildren> = ({count, children}) => {
+const Carousel: FC<Props & PropsWithChildren> = ({count, children}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const changeIndex = (mode: Mode) => {
@@ -74,4 +74,4 @@ const DisplayCarousel: FC<Props & PropsWithChildren> = ({count, children}) => {
   );
 }
 
-export default DisplayCarousel;
+export default Carousel;

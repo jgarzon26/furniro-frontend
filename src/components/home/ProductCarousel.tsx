@@ -1,11 +1,12 @@
 'use client';
 
 import { FC } from "react";
-import { CarouselIndicator, CarouselLeftButton, CarouselRightButton, DisplayCarousel, DisplayCarouselFirstItem, DisplayCarouselItem, DisplayCarouselList } from "./DisplayCarousel";
+import { DisplayCarouselFirstItem, DisplayCarouselItem, DisplayCarouselList } from "./DisplayCarousel";
 import ProductFirstItemDetail from "./ProductFirstItemDetail";
 import { GetRandomProductsQuery } from "@/types/generated/graphql";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Carousel, CarouselIndicator, CarouselLeftButton, CarouselRightButton } from "@/components/common/Carousel";
 
 type Props = {
   query: GetRandomProductsQuery;
@@ -16,7 +17,7 @@ const ProductCarousel: FC<Props> = ({query}) => {
   const { push } = useRouter();
 
   return (
-    <DisplayCarousel count={products.length}>
+    <Carousel count={products.length}>
       <CarouselLeftButton />
       <CarouselIndicator />
       <DisplayCarouselList 
@@ -42,7 +43,7 @@ const ProductCarousel: FC<Props> = ({query}) => {
         )}
       />
       <CarouselRightButton />
-    </DisplayCarousel>
+    </Carousel>
   );
 }
 
