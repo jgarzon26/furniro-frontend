@@ -6,16 +6,27 @@ import { Mode, useCarouselContext } from "./Carousel";
 import { twJoin } from "tailwind-merge";
 import { FC } from "react";
 
-const CarouselLeftButton: FC = () => {
-  const { changeIndex, currentIndex } = useCarouselContext();
+type Props = {
+  disabledOnFirstIndex?: boolean;
+  onClick?: () => void;
+}
 
-  const classes = currentIndex > 0 ? "" : "opacity-0";
+const CarouselLeftButton: FC<Props> = ({disabledOnFirstIndex, onClick}) => {
+  const { changeIndex, index: currentIndex } = useCarouselContext();
+
+  const classes = !disabledOnFirstIndex && (currentIndex > 0 ? "" : "opacity-0");
 
   return (
     <CarouselButton
       icon={RiArrowLeftSLine}
-      disabled={currentIndex <= 0}
-      onClick={() => changeIndex(Mode.decrement)}
+      disabled={!disabledOnFirstIndex && currentIndex <= 0}
+      onClick={() => {
+        if(!onClick) {
+          changeIndex(Mode.decrement)
+        } else {
+          onClick();
+        }
+      }}
       className={twJoin("bg-transparent duration-150 disabled:cursor-auto", classes)}
     />
   );

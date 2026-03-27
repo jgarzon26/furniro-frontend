@@ -4,15 +4,27 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import CarouselButton from "./CarouselButton";
 import { Mode, useCarouselContext } from "./Carousel";
 import { FC } from "react";
+import { twMerge } from "tailwind-merge";
 
-const CarouselRightButton: FC = () => {
+type Props = {
+  className?: string;
+  onClick?: () => void;
+}
+
+const CarouselRightButton: FC<Props> = ({className, onClick}) => {
   const { changeIndex } = useCarouselContext();
 
   return (
     <CarouselButton
       icon={RiArrowRightSLine}
-      onClick={() => changeIndex(Mode.increment)}
-      className="absolute z-10 right-10 shadow-lg"
+      onClick={() => {
+        if(!onClick) {
+          changeIndex(Mode.increment);
+        } else {
+          onClick();
+        }
+      }}
+      className={twMerge("absolute z-10 right-10 shadow-lg", className)}
     />
   );
 }

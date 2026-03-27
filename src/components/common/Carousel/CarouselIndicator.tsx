@@ -6,7 +6,7 @@ import { CgRadioChecked } from "react-icons/cg";
 import { FC } from "react";
 
 const CarouselIndicator: FC = () => {
-  const { currentIndex, count, setIndex } = useCarouselContext();
+  const { index: currentIndex, count, setIndex } = useCarouselContext();
 
   return (
     <ul className="flex flex-row items-center gap-3 absolute z-10 h-1/8 w-1/4 bottom-5 left-100">
