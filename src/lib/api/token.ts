@@ -8,7 +8,8 @@ const TOKEN_KEY = 'token';
 
 export const setAuthBearerToken = async (token: string) => {
   const cookieStore = await cookies();
-  cookieStore.set(TOKEN_KEY, token, { secure: true });
+  cookieStore.set(TOKEN_KEY, token, { secure: true, httpOnly: true, });
+  return true;
 }
 
 export const getAuthBearerToken = async () => {
@@ -20,4 +21,5 @@ export const getAuthBearerToken = async () => {
 export const deleteAuthBearerToken = async () => {
   const cookieStore = await cookies();
   cookieStore.delete(TOKEN_KEY);
+  return true;
 }
