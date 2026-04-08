@@ -1,7 +1,16 @@
-import { AddToCartMutation, AddToCartMutationVariables, GetUserCartQuery, GetUserCartQueryVariables, RemoveFromCartMutation, RemoveFromCartMutationVariables } from "@/types/generated/graphql";
+import { 
+  AddToCartMutation, 
+  AddToCartMutationVariables, 
+  GetUserCartQuery, 
+  GetUserCartQueryVariables, 
+  LoginQuery, 
+  LoginQueryVariables, 
+  RemoveFromCartMutation, 
+  RemoveFromCartMutationVariables 
+} from "@/types/generated/graphql";
 import { gql, TypedDocumentNode } from "@apollo/client";
 
-export const LOGIN: TypedDocumentNode = gql`
+export const LOGIN: TypedDocumentNode<LoginQuery, LoginQueryVariables> = gql`
   query Login($input: LoginInput!) {
     login(input: $input) {
       token
