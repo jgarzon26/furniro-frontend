@@ -1,6 +1,6 @@
 'use client';
 
-import { GraphQLURL } from "@/lib/api";
+import { GraphQLURL } from "@/lib/api/urls";
 import { HttpLink } from "@apollo/client";
 import { ApolloClient, ApolloNextAppProvider, InMemoryCache } from "@apollo/client-integration-nextjs";
 import { FC, PropsWithChildren } from "react";
