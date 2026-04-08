@@ -1,6 +1,6 @@
 import { HttpLink } from "@apollo/client";
 import { ApolloClient, InMemoryCache, registerApolloClient } from "@apollo/client-integration-nextjs";
-import { GraphQLURL } from "./api";
+import { GraphQLURL } from "./api/urls";
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
