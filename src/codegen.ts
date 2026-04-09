@@ -1,5 +1,5 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
-import { GraphQLURL } from './lib/api';
+import { GraphQLURL } from './lib/api/urls';
 
 const config: CodegenConfig = {
   overwrite: true,
