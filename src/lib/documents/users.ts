@@ -1,12 +1,12 @@
-import { 
-  AddToCartMutation, 
-  AddToCartMutationVariables, 
-  GetUserCartQuery, 
-  GetUserCartQueryVariables, 
-  LoginQuery, 
-  LoginQueryVariables, 
-  RemoveFromCartMutation, 
-  RemoveFromCartMutationVariables 
+import {
+  AddToCartMutation,
+  AddToCartMutationVariables,
+  GetUserCartQuery,
+  GetUserCartQueryVariables,
+  LoginQuery,
+  LoginQueryVariables,
+  RemoveFromCartMutation,
+  RemoveFromCartMutationVariables,
 } from "@/types/generated/graphql";
 import { gql, TypedDocumentNode } from "@apollo/client";
 
@@ -19,15 +19,21 @@ export const LOGIN: TypedDocumentNode<LoginQuery, LoginQueryVariables> = gql`
   }
 `;
 
+export const CART_ITEM_SHORT: TypedDocumentNode = gql`
+  fragment CartItemShort on CartItem {
+    product {
+      sku
+      title
+      price
+    }
+    quantity
+  }
+`;
+
 export const CART_SHORT: TypedDocumentNode = gql`
   fragment CartShort on Cart {
     items {
-      product {
-        sku
-        title
-        price
-      }
-      quantity
+      ...CartItemShort
     }
   }
 `;
@@ -41,17 +47,30 @@ export const CART_RES_SHORT: TypedDocumentNode = gql`
   }
 `;
 
-export const GET_USER_CART: TypedDocumentNode<GetUserCartQuery, GetUserCartQueryVariables> = gql`
+export const GET_USER_CART: TypedDocumentNode<
+  GetUserCartQuery,
+  GetUserCartQueryVariables
+> = gql`
   query GetUserCart {
     user {
       cart {
-        ...CartShort
+        items {
+          product {
+            sku
+            title
+            price
+          }
+          quantity
+        }
       }
     }
   }
 `;
 
-export const ADD_OR_UPDATE_CART: TypedDocumentNode<AddToCartMutation, AddToCartMutationVariables> = gql`
+export const ADD_OR_UPDATE_CART: TypedDocumentNode<
+  AddToCartMutation,
+  AddToCartMutationVariables
+> = gql`
   mutation AddToCart($input: AddCartInput!) {
     addToCart(input: $input) {
       ...CartResShort
@@ -59,7 +78,10 @@ export const ADD_OR_UPDATE_CART: TypedDocumentNode<AddToCartMutation, AddToCartM
   }
 `;
 
-export const UPDATE_OR_REMOVE_CART: TypedDocumentNode<RemoveFromCartMutation, RemoveFromCartMutationVariables> = gql`
+export const UPDATE_OR_REMOVE_CART: TypedDocumentNode<
+  RemoveFromCartMutation,
+  RemoveFromCartMutationVariables
+> = gql`
   mutation RemoveFromCart($input: RemoveCartInput!) {
     removeFromCart(input: $input) {
       ...CartResShort

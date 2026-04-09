@@ -28,12 +28,7 @@ const AccountButton: FC = () => {
   useEffect(() => {
     if(dataState === 'complete' && data) {
       const { token } = data.login;
-
-      const storeToken = async () => {
-        await setAuthBearerToken(token);
-      };
-
-      storeToken();
+      setAuthBearerToken(token);
     }
   }, [dataState, data]);
 
