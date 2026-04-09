@@ -1,25 +1,14 @@
-'use server';
-
-import { cookies } from "next/headers";
-
 const TOKEN_KEY = 'token';
 
-//TODO: inform gql to add expire time
-
-export const setAuthBearerToken = async (token: string) => {
-  const cookieStore = await cookies();
-  cookieStore.set(TOKEN_KEY, token, { secure: true, httpOnly: true, });
-  return true;
+export const setAuthBearerToken = (token: string) => {
+  localStorage.setItem(TOKEN_KEY, token);
 }
 
-export const getAuthBearerToken = async () => {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(TOKEN_KEY);
-  return `Bearer ${token?.value}`;
+export const getAuthBearerToken = () => {
+  const token = localStorage.getItem(TOKEN_KEY);
+  return token ? `Bearer ${token}` : '';
 }
 
-export const deleteAuthBearerToken = async () => {
-  const cookieStore = await cookies();
-  cookieStore.delete(TOKEN_KEY);
-  return true;
-}
+export const deleteAuthBearerToken = () => {
+  localStorage.removeItem(TOKEN_KEY);
+} 
