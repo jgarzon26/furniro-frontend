@@ -25,6 +25,7 @@ export const CART_ITEM_SHORT: TypedDocumentNode = gql`
       sku
       title
       price
+      discountedPrice
       images
     }
     quantity
@@ -61,6 +62,7 @@ export const GET_USER_CART: TypedDocumentNode<
             sku
             title
             price
+            discountedPrice
             images
           }
           quantity
@@ -83,6 +85,7 @@ export const ADD_OR_UPDATE_CART: TypedDocumentNode<
             sku
             title
             price
+            discountedPrice
             images
           }
           quantity
@@ -106,6 +109,7 @@ export const UPDATE_OR_REMOVE_CART: TypedDocumentNode<
             sku
             title
             price
+            discountedPrice
             images
           }
           quantity
