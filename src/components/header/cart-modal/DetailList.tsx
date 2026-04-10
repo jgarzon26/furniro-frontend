@@ -16,7 +16,7 @@ const DetailList: FC<Props> = ({ cart }) => {
       </ul>
       <div className="flex flex-row items-center justify-between">
         <h5 className="font-medium">Subtotal</h5>
-        <p className="text-primary font-semibold">Rs. 250,000.00</p>
+        <p className="text-primary font-semibold">$ {cart.totalPrice}</p>
       </div>
     </>
   );

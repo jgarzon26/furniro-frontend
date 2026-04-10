@@ -25,6 +25,7 @@ export const CART_ITEM_SHORT: TypedDocumentNode = gql`
       sku
       title
       price
+      images
     }
     quantity
   }
@@ -35,6 +36,7 @@ export const CART_SHORT: TypedDocumentNode = gql`
     items {
       ...CartItemShort
     }
+    totalPrice
   }
 `;
 
@@ -59,9 +61,11 @@ export const GET_USER_CART: TypedDocumentNode<
             sku
             title
             price
+            images
           }
           quantity
         }
+        totalPrice
       }
     }
   }
@@ -73,7 +77,19 @@ export const ADD_OR_UPDATE_CART: TypedDocumentNode<
 > = gql`
   mutation AddToCart($input: AddCartInput!) {
     addToCart(input: $input) {
-      ...CartResShort
+      cart {
+        items {
+          product {
+            sku
+            title
+            price
+            images
+          }
+          quantity
+        }
+        totalPrice
+      }
+      message
     }
   }
 `;
@@ -84,7 +100,19 @@ export const UPDATE_OR_REMOVE_CART: TypedDocumentNode<
 > = gql`
   mutation RemoveFromCart($input: RemoveCartInput!) {
     removeFromCart(input: $input) {
-      ...CartResShort
+      cart {
+        items {
+          product {
+            sku
+            title
+            price
+            images
+          }
+          quantity
+        }
+        totalPrice
+      }
+      message
     }
   }
 `;
