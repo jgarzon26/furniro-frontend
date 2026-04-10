@@ -1,9 +1,10 @@
 'use client';
 
-import { FC, useState } from "react";
+import { FC, Suspense, useState } from "react";
 import { IconButton, Modal } from "@/components/common";
 import { ShoppingCart } from "@/components/common/icons";
 import CartModal from "./CartModal";
+import HomeLoading from "@/app/home/loading";
 
 const ModalButton: FC = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +12,9 @@ const ModalButton: FC = () => {
   return (
     <>
       <Modal show={show} onClose={() => setShow(false)} className="h-[75dvh] w-100 top-0 right-0 p-5 flex flex-col gap-5">
-        <CartModal onClose={() => setShow(false)} />
+        <Suspense fallback={<HomeLoading />}>
+          <CartModal onClose={() => setShow(false)} />
+        </Suspense>
       </Modal>
       <IconButton icon={ShoppingCart} onClick={() => setShow(true)} />
     </>

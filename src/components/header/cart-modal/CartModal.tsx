@@ -2,10 +2,9 @@ import { FC } from "react";
 import { IconButton } from "@/components/common";
 import { CartOff } from "@/components/common/icons";
 import Actions from "./Actions";
-import { useQuery } from "@apollo/client/react";
+import { useSuspenseQuery } from "@apollo/client/react";
 import { GET_USER_CART } from "@/lib/documents/users";
 import DetailList from "./DetailList";
-import HomeLoading from "@/app/home/loading";
 import { CombinedGraphQLErrors } from "@apollo/client";
 
 type Props = {
@@ -13,8 +12,10 @@ type Props = {
 };
 
 const CartModal: FC<Props> = ({ onClose }) => {
-  const { data, error, loading } = useQuery(GET_USER_CART, {
+  const { data, error } = useSuspenseQuery(GET_USER_CART, {
     fetchPolicy: "cache-and-network",
+    errorPolicy: 'all',
+    queryKey: ['cart'],
   });
 
   let errorMessage = error?.message;
@@ -35,9 +36,6 @@ const CartModal: FC<Props> = ({ onClose }) => {
         }
         {
           error && <p>{errorMessage}</p>
-        }
-        {
-          loading && <HomeLoading />
         }
       <hr />
       {data && <Actions onClose={onClose}/>}
