@@ -40,7 +40,7 @@ const CartModal: FC<Props> = ({ onClose }) => {
           loading && <HomeLoading />
         }
       <hr />
-      <Actions onClose={onClose}/>
+      {data && <Actions onClose={onClose}/>}
     </>
   );
 }
