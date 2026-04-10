@@ -1,3 +1,5 @@
+'use client';
+
 const TOKEN_KEY = 'token';
 
 export const setAuthBearerToken = (token: string) => {
