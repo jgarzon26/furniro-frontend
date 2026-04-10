@@ -1,6 +1,12 @@
+import { CartItemShortFragment } from "@/types/generated/graphql";
 import CartDataRow from "./CartDataRow";
+import { FC } from "react";
 
-const CartTable = () => {
+type Props = {
+  items: CartItemShortFragment[];
+}
+
+const CartTable: FC<Props> = ({items}) => {
   return (
     <table className="table-fixed h-full w-full">
       <colgroup>
@@ -24,7 +30,9 @@ const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-        <CartDataRow />
+        {
+          items.map(item => <CartDataRow key={item.product.sku} item={item}/>)
+        }
       </tbody>
     </table>
   );

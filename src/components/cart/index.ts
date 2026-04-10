@@ -1,2 +1,1 @@
-export { default as CartDetail } from './CartDetail';
-export { default as CartTable } from './CartTable';
+export { default as CartSection } from './CartSection';
